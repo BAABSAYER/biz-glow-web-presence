@@ -2,36 +2,55 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Smartphone, Monitor, Tablet, Wifi } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Products = () => {
+  const { t } = useLanguage();
+  
   const productCategories = [
     {
       icon: Monitor,
-      title: "POS Terminals",
-      description: "Advanced point-of-sale systems for retail and hospitality",
+      title: t('products.pos_terminals.title'),
+      description: t('products.pos_terminals.description'),
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop",
-      products: ["Desktop POS", "All-in-One Terminals", "Touchscreen Systems"]
+      products: [
+        t('products.pos_terminals.product1'),
+        t('products.pos_terminals.product2'),
+        t('products.pos_terminals.product3')
+      ]
     },
     {
       icon: Smartphone,
-      title: "Mobile Computers",
-      description: "Rugged handheld devices for enterprise mobility",
+      title: t('products.mobile.title'),
+      description: t('products.mobile.description'),
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
-      products: ["Handheld Scanners", "Mobile PDAs", "Rugged Smartphones"]
+      products: [
+        t('products.mobile.product1'),
+        t('products.mobile.product2'),
+        t('products.mobile.product3')
+      ]
     },
     {
       icon: Tablet,
-      title: "Tablet Solutions",
-      description: "Industrial tablets for various business applications",
+      title: t('products.tablet.title'),
+      description: t('products.tablet.description'),
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      products: ["Industrial Tablets", "Kiosk Tablets", "Field Service Tablets"]
+      products: [
+        t('products.tablet.product1'),
+        t('products.tablet.product2'),
+        t('products.tablet.product3')
+      ]
     },
     {
       icon: Wifi,
-      title: "IoT Devices",
-      description: "Smart connected devices for the Internet of Things",
+      title: t('products.iot_devices.title'),
+      description: t('products.iot_devices.description'),
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-      products: ["Smart Sensors", "Gateway Devices", "Connectivity Solutions"]
+      products: [
+        t('products.iot_devices.product1'),
+        t('products.iot_devices.product2'),
+        t('products.iot_devices.product3')
+      ]
     }
   ];
 
@@ -47,11 +66,10 @@ const Products = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-talah-primary mb-4">
-            Our Products
+            {t('products.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our comprehensive range of enterprise-grade technology solutions designed 
-            to accelerate your business transformation
+            {t('products.subtitle')}
           </p>
         </div>
 
@@ -94,7 +112,7 @@ const Products = () => {
                   variant="outline" 
                   className="w-full border-talah-accent text-talah-accent hover:bg-talah-accent hover:text-white group-hover:scale-105 transition-all duration-300"
                 >
-                  Learn More
+                  {t('products.learn_more')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -104,9 +122,9 @@ const Products = () => {
 
         {/* Call to Action Section */}
         <div className="text-center bg-gradient-to-r from-talah-primary to-talah-accent rounded-2xl p-8 text-white">
-          <h3 className="text-2xl font-bold mb-4">Need a Custom Solution?</h3>
+          <h3 className="text-2xl font-bold mb-4">{t('products.custom.title')}</h3>
           <p className="text-lg mb-6 opacity-90">
-            Our team can design and develop tailored products to meet your specific business requirements
+            {t('products.custom.description')}
           </p>
           <Button 
             onClick={scrollToContact}
@@ -114,7 +132,7 @@ const Products = () => {
             variant="secondary"
             className="bg-white text-talah-primary hover:bg-gray-100 px-8 py-3"
           >
-            Contact Our Experts
+            {t('products.custom.cta')}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>

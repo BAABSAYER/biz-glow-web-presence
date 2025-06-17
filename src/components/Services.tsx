@@ -1,44 +1,77 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Monitor, Wifi, Smartphone, Database, Shield, Headphones } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: Monitor,
-      title: "POS Systems",
-      description: "Modern, intuitive point-of-sale solutions that streamline your retail operations and enhance customer experience.",
-      features: ["Cloud-based management", "Real-time analytics", "Multi-payment support", "Inventory tracking"]
+      title: t('services.pos.title'),
+      description: t('services.pos.description'),
+      features: [
+        t('services.pos.feature1'),
+        t('services.pos.feature2'),
+        t('services.pos.feature3'),
+        t('services.pos.feature4')
+      ]
     },
     {
       icon: Wifi,
-      title: "IoT Solutions",
-      description: "Smart, connected devices and sensors that optimize operations and provide valuable insights for your business.",
-      features: ["Smart sensors", "Data analytics", "Remote monitoring", "Automated controls"]
+      title: t('services.iot.title'),
+      description: t('services.iot.description'),
+      features: [
+        t('services.iot.feature1'),
+        t('services.iot.feature2'),
+        t('services.iot.feature3'),
+        t('services.iot.feature4')
+      ]
     },
     {
       icon: Smartphone,
-      title: "Enterprise Mobility",
-      description: "Comprehensive mobile solutions that enable your workforce to be productive anywhere, anytime.",
-      features: ["Mobile apps", "Device management", "Security protocols", "Remote access"]
+      title: t('services.mobility.title'),
+      description: t('services.mobility.description'),
+      features: [
+        t('services.mobility.feature1'),
+        t('services.mobility.feature2'),
+        t('services.mobility.feature3'),
+        t('services.mobility.feature4')
+      ]
     },
     {
       icon: Database,
-      title: "Data Management",
-      description: "Secure, scalable data solutions that help you store, analyze, and leverage your business information.",
-      features: ["Cloud storage", "Data backup", "Analytics platform", "Data security"]
+      title: t('services.data.title'),
+      description: t('services.data.description'),
+      features: [
+        t('services.data.feature1'),
+        t('services.data.feature2'),
+        t('services.data.feature3'),
+        t('services.data.feature4')
+      ]
     },
     {
       icon: Shield,
-      title: "Cybersecurity",
-      description: "Comprehensive security solutions to protect your business from digital threats and ensure compliance.",
-      features: ["Threat detection", "Security audits", "Compliance support", "Employee training"]
+      title: t('services.security.title'),
+      description: t('services.security.description'),
+      features: [
+        t('services.security.feature1'),
+        t('services.security.feature2'),
+        t('services.security.feature3'),
+        t('services.security.feature4')
+      ]
     },
     {
       icon: Headphones,
-      title: "24/7 Support",
-      description: "Round-the-clock technical support to ensure your systems run smoothly and efficiently.",
-      features: ["Remote assistance", "On-site support", "Maintenance plans", "Emergency response"]
+      title: t('services.support.title'),
+      description: t('services.support.description'),
+      features: [
+        t('services.support.feature1'),
+        t('services.support.feature2'),
+        t('services.support.feature3'),
+        t('services.support.feature4')
+      ]
     }
   ];
 
@@ -47,10 +80,10 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-talah-primary mb-4">
-            Our Services
+            {t('services.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive IT solutions designed to drive your business forward in the digital age
+            {t('services.subtitle')}
           </p>
         </div>
 

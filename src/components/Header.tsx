@@ -2,13 +2,14 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('EN');
+  const { language, setLanguage, t } = useLanguage();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'EN' ? 'AR' : 'EN');
+    setLanguage(language === 'en' ? 'ar' : 'en');
   };
 
   return (
@@ -27,19 +28,19 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#home" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
-              Home
+              {t('nav.home')}
             </a>
             <a href="#services" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
-              Services
+              {t('nav.services')}
             </a>
             <a href="#products" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
-              Products
+              {t('nav.products')}
             </a>
             <a href="#about" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
-              About
+              {t('nav.about')}
             </a>
             <a href="#contact" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
-              Contact
+              {t('nav.contact')}
             </a>
             
             {/* Language Toggle */}
@@ -50,7 +51,7 @@ const Header = () => {
               className="flex items-center gap-2 border-talah-accent text-talah-accent hover:bg-talah-accent hover:text-white"
             >
               <Globe size={16} />
-              {language}
+              {language.toUpperCase()}
             </Button>
           </nav>
 
@@ -63,7 +64,7 @@ const Header = () => {
               className="flex items-center gap-1 border-talah-accent text-talah-accent hover:bg-talah-accent hover:text-white"
             >
               <Globe size={14} />
-              {language}
+              {language.toUpperCase()}
             </Button>
             <Button
               variant="ghost"
@@ -85,35 +86,35 @@ const Header = () => {
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                {t('nav.home')}
               </a>
               <a 
                 href="#services" 
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                {t('nav.services')}
               </a>
               <a 
                 href="#products" 
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Products
+                {t('nav.products')}
               </a>
               <a 
                 href="#about" 
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                {t('nav.about')}
               </a>
               <a 
                 href="#contact" 
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t('nav.contact')}
               </a>
             </nav>
           </div>

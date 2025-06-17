@@ -1,28 +1,31 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Users, Lightbulb, Award } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+  
   const values = [
     {
       icon: Target,
-      title: "Mission",
-      description: "To empower businesses with innovative technology solutions that drive growth and efficiency in the digital era."
+      title: t('about.mission.title'),
+      description: t('about.mission.description')
     },
     {
       icon: Users,
-      title: "Team",
-      description: "Expert professionals with deep industry knowledge and passion for delivering exceptional IT solutions."
+      title: t('about.team.title'),
+      description: t('about.team.description')
     },
     {
       icon: Lightbulb,
-      title: "Innovation",
-      description: "Constantly evolving with the latest technologies to provide cutting-edge solutions for our clients."
+      title: t('about.innovation.title'),
+      description: t('about.innovation.description')
     },
     {
       icon: Award,
-      title: "Quality",
-      description: "Committed to delivering superior quality solutions with comprehensive support and maintenance."
+      title: t('about.quality.title'),
+      description: t('about.quality.description')
     }
   ];
 
@@ -34,27 +37,20 @@ const About = () => {
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-talah-primary mb-4">
-                About Talah Tech
+                {t('about.title')}
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                At Talah Tech, we believe in the power of technology to transform businesses and 
-                shape the future. With years of experience in the IT industry, we specialize in 
-                delivering comprehensive solutions that meet the evolving needs of modern enterprises.
+                {t('about.description1')}
               </p>
             </div>
 
             <div className="space-y-4">
               <p className="text-gray-600">
-                Our expertise spans across POS systems, IoT solutions, and enterprise mobility 
-                technologies, making us your one-stop destination for all IT needs. We pride 
-                ourselves on understanding each client's unique requirements and delivering 
-                tailored solutions that drive real business value.
+                {t('about.description2')}
               </p>
               
               <p className="text-gray-600">
-                From consultation and implementation to ongoing support and maintenance, 
-                we ensure your technology infrastructure remains robust, secure, and scalable 
-                as your business grows.
+                {t('about.description3')}
               </p>
             </div>
           </div>
