@@ -57,17 +57,6 @@ const About = () => {
                 as your business grows.
               </p>
             </div>
-
-            <div className="grid grid-cols-2 gap-4 pt-6">
-              <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <div className="text-2xl font-bold text-talah-primary">5+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </div>
-              <div className="text-center p-4 bg-cyan-50 rounded-lg">
-                <div className="text-2xl font-bold text-talah-accent">100%</div>
-                <div className="text-sm text-gray-600">Client Satisfaction</div>
-              </div>
-            </div>
           </div>
 
           {/* Right Content - Values */}
