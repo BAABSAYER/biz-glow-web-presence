@@ -35,6 +35,13 @@ const Products = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="products" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,6 +90,7 @@ const Products = () => {
                 </ul>
                 
                 <Button 
+                  onClick={scrollToContact}
                   variant="outline" 
                   className="w-full border-talah-accent text-talah-accent hover:bg-talah-accent hover:text-white group-hover:scale-105 transition-all duration-300"
                 >
@@ -101,6 +109,7 @@ const Products = () => {
             Our team can design and develop tailored products to meet your specific business requirements
           </p>
           <Button 
+            onClick={scrollToContact}
             size="lg"
             variant="secondary"
             className="bg-white text-talah-primary hover:bg-gray-100 px-8 py-3"
