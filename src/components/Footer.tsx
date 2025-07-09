@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, X } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,10 +26,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a href="#" className="text-gray-300 hover:text-talah-accent transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-talah-accent transition-colors">
-                <Facebook size={20} />
+                <X size={20} />
               </a>
             </div>
           </div>
