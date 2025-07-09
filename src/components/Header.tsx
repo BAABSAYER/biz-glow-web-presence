@@ -1,16 +1,12 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'ar' : 'en');
-  };
+  const { t } = useLanguage();
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
@@ -42,30 +38,10 @@ const Header = () => {
             <a href="#contact" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
               {t('nav.contact')}
             </a>
-            
-            {/* Language Toggle */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 border-talah-accent text-talah-accent hover:bg-talah-accent hover:text-white"
-            >
-              <Globe size={16} />
-              {language.toUpperCase()}
-            </Button>
           </nav>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleLanguage}
-              className="flex items-center gap-1 border-talah-accent text-talah-accent hover:bg-talah-accent hover:text-white"
-            >
-              <Globe size={14} />
-              {language.toUpperCase()}
-            </Button>
+          <div className="md:hidden">
             <Button
               variant="ghost"
               size="sm"
