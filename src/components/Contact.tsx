@@ -36,8 +36,7 @@ const Contact = () => {
   };
 
   const openWhatsApp = () => {
-    // Replace with your actual WhatsApp number
-    const phoneNumber = "+1234567890";
+    const phoneNumber = "+966540079024";
     const message = "Hello! I'm interested in your IT services.";
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
@@ -74,7 +73,7 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-talah-accent" />
                   <div>
                     <div className="font-medium text-talah-primary">Phone</div>
-                    <div className="text-gray-600">+966 XX XXX XXXX</div>
+                    <div className="text-gray-600">+966 54 007 9024</div>
                   </div>
                 </div>
                 
