@@ -3,15 +3,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, ArrowRight, Download, ShoppingCart, MessageCircle, Star } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Download, ShoppingCart, MessageCircle, Star, ChevronRight } from 'lucide-react';
 import { products } from '@/data/products';
 import { useCases } from '@/data/useCases';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const ProductPage = () => {
   const { slug } = useParams();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedVariants, setSelectedVariants] = useState<{[key: string]: string}>({});
+  
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
   
   const product = products.find(p => p.slug === slug);
   
@@ -54,24 +59,33 @@ const ProductPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white border-b">
+      <header className="bg-white border-b sticky top-0 z-40 backdrop-blur-md bg-white/95">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-talah-primary">Home</Link>
-            <span>/</span>
-            <Link to="/products" className="hover:text-talah-primary">Products</Link>
-            <span>/</span>
-            <span className="text-talah-primary">{product.name}</span>
-          </nav>
+          <div className="flex items-center justify-between">
+            <nav className="flex items-center space-x-2 text-sm text-gray-500">
+              <Link to="/" className="hover:text-talah-primary transition-colors">Home</Link>
+              <ChevronRight className="h-4 w-4" />
+              <Link to="/products" className="hover:text-talah-primary transition-colors">Products</Link>
+              <ChevronRight className="h-4 w-4" />
+              <span className="text-talah-primary font-medium truncate max-w-[200px]">{product.name}</span>
+            </nav>
+            <Link to="/products">
+              <Button variant="ghost" size="sm">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                <span className="hidden sm:inline">Back to Products</span>
+                <span className="sm:hidden">Back</span>
+              </Button>
+            </Link>
+          </div>
         </div>
       </header>
 
       {/* Product Hero */}
-      <section className="py-8">
+      <section className="py-6 md:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Image Gallery */}
-            <div className="space-y-4">
+            <div className="space-y-4 order-2 lg:order-1">
               <div className="relative h-96 bg-gray-100 rounded-lg overflow-hidden">
                 <img 
                   src={product.gallery[selectedImageIndex]} 
@@ -104,15 +118,18 @@ const ProductPage = () => {
             </div>
 
             {/* Product Info */}
-            <div className="space-y-6">
+            <div className="space-y-6 order-1 lg:order-2">
               <div>
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="text-sm text-gray-500">{product.brand}</span>
-                  <span className="text-sm text-gray-400">•</span>
-                  <span className="text-sm text-gray-500">SKU: {product.sku}</span>
+                <div className="flex items-center flex-wrap gap-2 mb-3">
+                  <Badge variant="outline" className="text-xs">{product.brand}</Badge>
+                  <Badge variant="outline" className="text-xs">SKU: {product.sku}</Badge>
+                  <Badge variant={product.availability === 'in-stock' ? 'default' : 'secondary'} className="text-xs">
+                    {product.availability === 'in-stock' ? 'In Stock' : 
+                     product.availability === 'pre-order' ? 'Pre-order' : 'Out of Stock'}
+                  </Badge>
                 </div>
-                <h1 className="text-3xl font-bold text-talah-primary mb-4">{product.name}</h1>
-                <p className="text-lg text-gray-600 mb-6">{product.shortDescription}</p>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-talah-primary mb-4 leading-tight">{product.name}</h1>
+                <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">{product.shortDescription}</p>
                 
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="flex items-center space-x-1">

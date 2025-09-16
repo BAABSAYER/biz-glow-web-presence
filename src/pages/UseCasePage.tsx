@@ -2,14 +2,19 @@ import { useParams, Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, ArrowRight, Filter } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Filter, ChevronRight } from 'lucide-react';
 import { useCases } from '@/data/useCases';
 import { products } from '@/data/products';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const UseCasePage = () => {
   const { slug } = useParams();
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
   
   const useCase = useCases.find(uc => uc.slug === slug);
   
@@ -56,45 +61,71 @@ const UseCasePage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white border-b">
+      <header className="bg-white border-b sticky top-0 z-40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-talah-primary">Home</Link>
-            <span>/</span>
-            <Link to="/use-cases" className="hover:text-talah-primary">Use Cases</Link>
-            <span>/</span>
-            <span className="text-talah-primary">{useCase.title}</span>
-          </nav>
+          <div className="flex items-center justify-between">
+            <nav className="flex items-center space-x-2 text-sm text-gray-500">
+              <Link to="/" className="hover:text-talah-primary transition-colors">Home</Link>
+              <ChevronRight className="h-4 w-4" />
+              <Link to="/" className="hover:text-talah-primary transition-colors">Use Cases</Link>
+              <ChevronRight className="h-4 w-4" />
+              <span className="text-talah-primary font-medium">{useCase.title}</span>
+            </nav>
+            <Link to="/">
+              <Button variant="ghost" size="sm">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Home
+              </Button>
+            </Link>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-talah-primary to-talah-accent">
+      <section className="pt-8 pb-16 bg-gradient-to-br from-talah-primary via-talah-primary to-talah-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">{useCase.title}</h1>
-              <p className="text-xl mb-6 opacity-90">{useCase.summary}</p>
-              <p className="text-lg opacity-80 leading-relaxed">{useCase.longDescription}</p>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-white order-2 lg:order-1">
+              <div className="inline-flex items-center px-3 py-2 bg-white/10 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+                <span>Use Case Solution</span>
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">{useCase.title}</h1>
+              <p className="text-lg md:text-xl mb-6 opacity-90 leading-relaxed">{useCase.summary}</p>
+              <p className="text-base md:text-lg opacity-80 leading-relaxed mb-8">{useCase.longDescription}</p>
               
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4">Industries Served:</h3>
-                <div className="flex flex-wrap gap-2">
-                  {useCase.industries.map((industry, index) => (
-                    <Badge key={index} variant="secondary" className="bg-white/20 text-white border-white/30">
-                      {industry}
-                    </Badge>
-                  ))}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Industries Served:</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {useCase.industries.map((industry, index) => (
+                      <Badge key={index} variant="secondary" className="bg-white/15 text-white border-white/20 backdrop-blur-sm hover:bg-white/25 transition-colors">
+                        {industry}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
+                
+                <Button 
+                  size="lg"
+                  variant="secondary"
+                  className="bg-white text-talah-primary hover:bg-white/90 font-semibold px-8"
+                  onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Explore Solutions
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
               </div>
             </div>
             
-            <div className="relative">
-              <img 
-                src={useCase.heroImage} 
-                alt={useCase.title}
-                className="rounded-lg shadow-2xl w-full h-80 object-cover"
-              />
+            <div className="relative order-1 lg:order-2">
+              <div className="relative">
+                <img 
+                  src={useCase.heroImage} 
+                  alt={useCase.title}
+                  className="rounded-2xl shadow-2xl w-full h-64 md:h-80 lg:h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -116,29 +147,43 @@ const UseCasePage = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-16">
+      <section id="products" className="py-16 bg-gray-50/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-talah-primary">Recommended Products</h2>
-            
-            {/* Filters */}
-            <div className="flex items-center space-x-4">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-talah-primary mb-4">Recommended Products</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Curated solutions specifically designed for {useCase.title.toLowerCase()} applications
+            </p>
+          </div>
+          
+          {/* Filters */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-4 bg-white rounded-lg shadow-sm">
+            <div className="flex items-center space-x-2">
               <Filter className="h-5 w-5 text-gray-500" />
-              <div className="flex flex-wrap gap-2">
-                {availableFilters.map((filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => toggleFilter(filter)}
-                    className={`px-3 py-1 rounded-full text-sm border transition-colors ${
-                      selectedFilters.includes(filter)
-                        ? 'bg-talah-accent text-white border-talah-accent'
-                        : 'bg-white text-gray-600 border-gray-300 hover:border-talah-accent'
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                ))}
-              </div>
+              <span className="text-sm font-medium text-gray-700">Filter by:</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {availableFilters.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => toggleFilter(filter)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
+                    selectedFilters.includes(filter)
+                      ? 'bg-talah-accent text-white border-talah-accent shadow-md'
+                      : 'bg-white text-gray-600 border-gray-300 hover:border-talah-accent hover:text-talah-accent'
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
+              {selectedFilters.length > 0 && (
+                <button
+                  onClick={() => setSelectedFilters([])}
+                  className="px-4 py-2 rounded-full text-sm font-medium text-gray-500 hover:text-gray-700 underline"
+                >
+                  Clear All
+                </button>
+              )}
             </div>
           </div>
 
