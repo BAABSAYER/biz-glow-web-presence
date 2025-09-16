@@ -24,8 +24,14 @@ const Hero = () => {
               <Button 
                 size="lg"
                 className="bg-talah-primary hover:bg-talah-primary/90 text-white px-8 py-3 text-lg"
+                onClick={() => {
+                  const useCasesSection = document.getElementById('use-cases');
+                  if (useCasesSection) {
+                    useCasesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                Explore Products
+                Explore Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 

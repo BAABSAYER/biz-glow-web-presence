@@ -29,8 +29,8 @@ const Header = () => {
             <a href="#services" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
               {t('nav.services')}
             </a>
-            <a href="#products" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
-              {t('nav.products')}
+            <a href="#use-cases" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
+              Use Cases
             </a>
             <a href="#about" className="text-talah-primary hover:text-talah-accent transition-colors font-medium">
               {t('nav.about')}
@@ -72,11 +72,11 @@ const Header = () => {
                 {t('nav.services')}
               </a>
               <a 
-                href="#products" 
+                href="#use-cases" 
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('nav.products')}
+                Use Cases
               </a>
               <a 
                 href="#about" 
