@@ -1,3 +1,5 @@
+import fleetTransportationHero from '@/assets/fleet-transportation-hero.jpg';
+
 export interface UseCase {
   id: string;
   slug: string;
@@ -76,7 +78,7 @@ export const useCases: UseCase[] = [
     title: 'Fleet & Transportation',
     summary: 'In-vehicle technology for fleet management and safety',
     longDescription: 'Enhance fleet safety and efficiency with dashcams, mobile data video recorders, GPS tracking, and rugged in-vehicle computing solutions designed for transportation and logistics fleets.',
-    heroImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=400&fit=crop',
+    heroImage: fleetTransportationHero,
     industries: ['Transportation', 'Logistics', 'Public Safety', 'Construction'],
     benefits: [
       'Enhanced driver safety',
