@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 const ProductPage = () => {
   const { slug } = useParams();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [selectedVariants, setSelectedVariants] = useState<{[key: string]: string}>({});
+  
   
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
@@ -42,12 +42,6 @@ const ProductPage = () => {
     p.useCases.some(ucId => product.useCases.includes(ucId))
   ).slice(0, 3);
 
-  const handleVariantChange = (variantName: string, option: string) => {
-    setSelectedVariants(prev => ({
-      ...prev,
-      [variantName]: option
-    }));
-  };
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -145,33 +139,6 @@ const ProductPage = () => {
                 </div>
               </div>
 
-              {/* Variants */}
-              {product.variants.length > 0 && (
-                <div className="space-y-4">
-                  {product.variants.map((variant) => (
-                    <div key={variant.name}>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {variant.name}
-                      </label>
-                      <div className="flex flex-wrap gap-2">
-                        {variant.options.map((option) => (
-                          <button
-                            key={option}
-                            onClick={() => handleVariantChange(variant.name, option)}
-                            className={`px-3 py-2 text-sm border rounded-md transition-colors ${
-                              selectedVariants[variant.name] === option
-                                ? 'border-talah-accent bg-talah-accent text-white'
-                                : 'border-gray-300 hover:border-talah-accent'
-                            }`}
-                          >
-                            {option}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
 
               {/* CTAs */}
               <div className="space-y-3">
