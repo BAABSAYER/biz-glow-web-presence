@@ -18,9 +18,6 @@ const ProductsIndex = () => {
                          product.brand.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesFilters = selectedFilters.length === 0 || selectedFilters.every(filter => 
-      product.brand.toLowerCase().includes(filter.toLowerCase()) ||
-      product.availability === filter.toLowerCase().replace(' ', '-') ||
-      product.certifications.some(cert => cert.toLowerCase().includes(filter.toLowerCase())) ||
       product.useCases.some(ucId => {
         const useCase = useCases.find(uc => uc.id === ucId);
         return useCase?.title.toLowerCase().includes(filter.toLowerCase());
@@ -31,7 +28,6 @@ const ProductsIndex = () => {
   });
 
   const availableFilters = [
-    'In Stock', 'Pre-order', 'Talah Tech', 'Medical Grade', 'Rugged',
     'Retail & POS', 'Logistics & Warehousing', 'Healthcare & Medical', 'Fleet & Transportation', 'Smart IoT'
   ];
 
