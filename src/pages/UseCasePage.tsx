@@ -2,14 +2,14 @@ import { useParams, Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, ArrowRight, Filter, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { useCases } from '@/data/useCases';
 import { products } from '@/data/products';
 import { useState, useEffect } from 'react';
 
 const UseCasePage = () => {
   const { slug } = useParams();
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  
   
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
@@ -38,25 +38,6 @@ const UseCasePage = () => {
     product.useCases.includes(useCase.id)
   );
 
-  // Filter products based on selected filters
-  const filteredProducts = relatedProducts.filter(product => {
-    if (selectedFilters.length === 0) return true;
-    return selectedFilters.every(filter => 
-      product.brand.toLowerCase().includes(filter.toLowerCase()) ||
-      product.name.toLowerCase().includes(filter.toLowerCase()) ||
-      product.certifications.some(cert => cert.toLowerCase().includes(filter.toLowerCase()))
-    );
-  });
-
-  const availableFilters = ['In Stock', 'Pre-order', 'Talah Tech', 'Medical Grade', 'Rugged'];
-
-  const toggleFilter = (filter: string) => {
-    setSelectedFilters(prev => 
-      prev.includes(filter) 
-        ? prev.filter(f => f !== filter)
-        : [...prev, filter]
-    );
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -155,40 +136,9 @@ const UseCasePage = () => {
               Curated solutions specifically designed for {useCase.title.toLowerCase()} applications
             </p>
           </div>
-          
-          {/* Filters */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-4 bg-white rounded-lg shadow-sm">
-            <div className="flex items-center space-x-2">
-              <Filter className="h-5 w-5 text-gray-500" />
-              <span className="text-sm font-medium text-gray-700">Filter by:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {availableFilters.map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => toggleFilter(filter)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
-                    selectedFilters.includes(filter)
-                      ? 'bg-talah-accent text-white border-talah-accent shadow-md'
-                      : 'bg-white text-gray-600 border-gray-300 hover:border-talah-accent hover:text-talah-accent'
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
-              {selectedFilters.length > 0 && (
-                <button
-                  onClick={() => setSelectedFilters([])}
-                  className="px-4 py-2 rounded-full text-sm font-medium text-gray-500 hover:text-gray-700 underline"
-                >
-                  Clear All
-                </button>
-              )}
-            </div>
-          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map((product) => (
+            {relatedProducts.map((product) => (
               <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
                   <img 
@@ -239,18 +189,6 @@ const UseCasePage = () => {
             ))}
           </div>
 
-          {filteredProducts.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-500">No products match the selected filters.</p>
-              <Button 
-                variant="outline" 
-                onClick={() => setSelectedFilters([])}
-                className="mt-4"
-              >
-                Clear Filters
-              </Button>
-            </div>
-          )}
         </div>
       </section>
 
