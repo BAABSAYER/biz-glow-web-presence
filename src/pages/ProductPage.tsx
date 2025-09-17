@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, ArrowRight, Download, ShoppingCart, MessageCircle, Star, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Download, MessageCircle, ChevronRight } from 'lucide-react';
 import { products } from '@/data/products';
 import { useCases } from '@/data/useCases';
 import { useState, useEffect } from 'react';
@@ -149,32 +149,12 @@ const ProductPage = () => {
 
               {/* CTAs */}
               <div className="space-y-3">
-                {product.ctaType === 'buy' ? (
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-talah-accent hover:bg-talah-accent/90"
-                    onClick={() => window.open(product.ctaLink, '_blank')}
-                  >
-                    <ShoppingCart className="mr-2 h-5 w-5" />
-                    Add to Cart
-                  </Button>
-                ) : (
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-talah-accent hover:bg-talah-accent/90"
-                    onClick={scrollToContact}
-                  >
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Get Quote
-                  </Button>
-                )}
-                
                 <Button 
-                  variant="outline" 
                   size="lg" 
-                  className="w-full border-talah-primary text-talah-primary hover:bg-talah-primary hover:text-white"
+                  className="w-full bg-talah-accent hover:bg-talah-accent/90"
                   onClick={scrollToContact}
                 >
+                  <MessageCircle className="mr-2 h-5 w-5" />
                   Contact Sales Team
                 </Button>
               </div>
@@ -349,32 +329,13 @@ const ProductPage = () => {
 
       {/* Sticky Mobile CTA */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t p-4 z-50">
-        <div className="flex space-x-3">
-          {product.ctaType === 'buy' ? (
-            <Button 
-              className="flex-1 bg-talah-accent hover:bg-talah-accent/90"
-              onClick={() => window.open(product.ctaLink, '_blank')}
-            >
-              <ShoppingCart className="mr-2 h-4 w-4" />
-              Add to Cart
-            </Button>
-          ) : (
-            <Button 
-              className="flex-1 bg-talah-accent hover:bg-talah-accent/90"
-              onClick={scrollToContact}
-            >
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Get Quote
-            </Button>
-          )}
-          <Button 
-            variant="outline" 
-            className="flex-1 border-talah-primary text-talah-primary"
-            onClick={scrollToContact}
-          >
-            Contact Sales
-          </Button>
-        </div>
+        <Button 
+          className="w-full bg-talah-accent hover:bg-talah-accent/90"
+          onClick={scrollToContact}
+        >
+          <MessageCircle className="mr-2 h-4 w-4" />
+          Contact Sales Team
+        </Button>
       </div>
     </div>
   );
