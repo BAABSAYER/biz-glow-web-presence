@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Monitor, Wifi, Smartphone, Database, Shield, Headphones } from 'lucide-react';
+import { Monitor, Smartphone, Database, Headphones } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
@@ -16,17 +16,6 @@ const Services = () => {
         t('services.pos.feature2'),
         t('services.pos.feature3'),
         t('services.pos.feature4')
-      ]
-    },
-    {
-      icon: Wifi,
-      title: t('services.iot.title'),
-      description: t('services.iot.description'),
-      features: [
-        t('services.iot.feature1'),
-        t('services.iot.feature2'),
-        t('services.iot.feature3'),
-        t('services.iot.feature4')
       ]
     },
     {
@@ -49,17 +38,6 @@ const Services = () => {
         t('services.data.feature2'),
         t('services.data.feature3'),
         t('services.data.feature4')
-      ]
-    },
-    {
-      icon: Shield,
-      title: t('services.security.title'),
-      description: t('services.security.description'),
-      features: [
-        t('services.security.feature1'),
-        t('services.security.feature2'),
-        t('services.security.feature3'),
-        t('services.security.feature4')
       ]
     },
     {

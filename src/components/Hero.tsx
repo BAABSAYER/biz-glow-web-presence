@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Monitor, Wifi, Smartphone } from 'lucide-react';
+import { ArrowRight, Monitor, Smartphone } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -47,7 +47,7 @@ const Hero = () => {
           {/* Right Content - Visual Elements */}
           <div className="relative">
             <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-3 gap-6">
                 <div className="text-center p-4 bg-blue-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation">
                   <Monitor className="h-12 w-12 text-talah-primary mx-auto mb-3" />
                   <h3 className="font-semibold text-talah-primary">POS Systems</h3>
@@ -55,18 +55,12 @@ const Hero = () => {
                 </div>
                 
                 <div className="text-center p-4 bg-cyan-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation" style={{animationDelay: '0.5s'}}>
-                  <Wifi className="h-12 w-12 text-talah-accent mx-auto mb-3" />
-                  <h3 className="font-semibold text-talah-primary">IoT Solutions</h3>
-                  <p className="text-sm text-gray-600 mt-1">Connected devices</p>
-                </div>
-                
-                <div className="text-center p-4 bg-cyan-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation" style={{animationDelay: '1s'}}>
                   <Smartphone className="h-12 w-12 text-talah-accent mx-auto mb-3" />
                   <h3 className="font-semibold text-talah-primary">Enterprise Mobility</h3>
                   <p className="text-sm text-gray-600 mt-1">Mobile solutions</p>
                 </div>
                 
-                <div className="text-center p-4 bg-blue-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation" style={{animationDelay: '1.5s'}}>
+                <div className="text-center p-4 bg-blue-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation" style={{animationDelay: '1s'}}>
                   <div className="h-12 w-12 bg-talah-primary rounded-full mx-auto mb-3 flex items-center justify-center">
                     <span className="text-white font-bold text-xs">24/7</span>
                   </div>
