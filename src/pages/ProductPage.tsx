@@ -117,15 +117,6 @@ const ProductPage = () => {
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-talah-primary mb-4 leading-tight">{product.name}</h1>
                 <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">{product.shortDescription}</p>
                 
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="flex items-center space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                    <span className="text-sm text-gray-500 ml-2">4.8 (24 reviews)</span>
-                  </div>
-                </div>
-
                 <div className="text-2xl font-bold text-talah-primary mb-6">
                   {product.price || 'Contact for pricing'}
                 </div>
