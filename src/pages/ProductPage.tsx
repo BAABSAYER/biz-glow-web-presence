@@ -114,14 +114,6 @@ const ProductPage = () => {
             {/* Product Info */}
             <div className="space-y-6 order-1 lg:order-2">
               <div>
-                <div className="flex items-center flex-wrap gap-2 mb-3">
-                  <Badge variant="outline" className="text-xs">{product.brand}</Badge>
-                  <Badge variant="outline" className="text-xs">SKU: {product.sku}</Badge>
-                  <Badge variant={product.availability === 'in-stock' ? 'default' : 'secondary'} className="text-xs">
-                    {product.availability === 'in-stock' ? 'In Stock' : 
-                     product.availability === 'pre-order' ? 'Pre-order' : 'Out of Stock'}
-                  </Badge>
-                </div>
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-talah-primary mb-4 leading-tight">{product.name}</h1>
                 <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">{product.shortDescription}</p>
                 
