@@ -140,6 +140,30 @@ const ProductPage = () => {
               </div>
 
 
+              {/* Variants - Display Only */}
+              {product.variants.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Available Configurations</h3>
+                  {product.variants.map((variant) => (
+                    <div key={variant.name}>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        {variant.name}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {variant.options.map((option) => (
+                          <div
+                            key={option}
+                            className="px-3 py-2 text-sm border border-gray-300 rounded-md bg-gray-50 text-gray-700"
+                          >
+                            {option}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               {/* CTAs */}
               <div className="space-y-3">
                 {product.ctaType === 'buy' ? (
