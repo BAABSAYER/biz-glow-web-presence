@@ -1,0 +1,1138 @@
+openapi: 3.0.3
+info:
+  title: Talah Tech Product Management API
+  description: Comprehensive API for managing products, categories, specifications, and use cases
+  version: 1.0.0
+  contact:
+    name: Talah Tech API Support
+    email: api-support@talahtech.com
+
+servers:
+  - url: https://your-replit-domain.replit.dev/api/v1
+    description: Production server
+  - url: http://localhost:3000/api/v1
+    description: Development server
+
+tags:
+  - name: Products
+    description: Product management operations
+  - name: Categories
+    description: Product category management
+  - name: Use Cases
+    description: Use case management
+  - name: Specifications
+    description: Product specification management
+  - name: Images
+    description: Image and media management
+  - name: Variants
+    description: Product variant management
+
+paths:
+  # PRODUCTS ENDPOINTS
+  /products:
+    get:
+      tags:
+        - Products
+      summary: Get all products with filtering and pagination
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: search
+          in: query
+          schema:
+            type: string
+          description: Search in product name and description
+        - name: category
+          in: query
+          schema:
+            type: string
+          description: Filter by category slug
+        - name: use_case
+          in: query
+          schema:
+            type: string
+          description: Filter by use case slug
+        - name: brand
+          in: query
+          schema:
+            type: string
+        - name: availability
+          in: query
+          schema:
+            type: string
+            enum: [in-stock, pre-order, out-of-stock]
+        - name: sort_by
+          in: query
+          schema:
+            type: string
+            enum: [name, price, created_at, updated_at]
+            default: created_at
+        - name: sort_order
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+      responses:
+        '200':
+          description: List of products
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Product'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+                  filters:
+                    $ref: '#/components/schemas/ProductFilters'
+
+    post:
+      tags:
+        - Products
+      summary: Create a new product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+      responses:
+        '201':
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+
+  /products/{slug}:
+    get:
+      tags:
+        - Products
+      summary: Get product by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Product details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductDetailed'
+        '404':
+          description: Product not found
+
+    put:
+      tags:
+        - Products
+      summary: Update product
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductUpdate'
+      responses:
+        '200':
+          description: Product updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+        '401':
+          description: Unauthorized
+
+    delete:
+      tags:
+        - Products
+      summary: Delete product
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Product deleted successfully
+        '404':
+          description: Product not found
+        '401':
+          description: Unauthorized
+
+  /products/{slug}/related:
+    get:
+      tags:
+        - Products
+      summary: Get related products
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 3
+      responses:
+        '200':
+          description: Related products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+
+  # USE CASES ENDPOINTS
+  /use-cases:
+    get:
+      tags:
+        - Use Cases
+      summary: Get all use cases
+      responses:
+        '200':
+          description: List of use cases
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UseCase'
+
+    post:
+      tags:
+        - Use Cases
+      summary: Create a new use case
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UseCaseCreate'
+      responses:
+        '201':
+          description: Use case created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UseCase'
+
+  /use-cases/{slug}:
+    get:
+      tags:
+        - Use Cases
+      summary: Get use case by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Use case details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UseCaseDetailed'
+        '404':
+          description: Use case not found
+
+    put:
+      tags:
+        - Use Cases
+      summary: Update use case
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UseCaseUpdate'
+      responses:
+        '200':
+          description: Use case updated successfully
+
+    delete:
+      tags:
+        - Use Cases
+      summary: Delete use case
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Use case deleted successfully
+
+  /use-cases/{slug}/products:
+    get:
+      tags:
+        - Use Cases
+      summary: Get products for a specific use case
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Products for use case
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+
+  # CATEGORIES ENDPOINTS
+  /categories:
+    get:
+      tags:
+        - Categories
+      summary: Get all categories
+      responses:
+        '200':
+          description: List of categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+
+    post:
+      tags:
+        - Categories
+      summary: Create a new category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryCreate'
+      responses:
+        '201':
+          description: Category created successfully
+
+  /categories/{id}:
+    get:
+      tags:
+        - Categories
+      summary: Get category by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Category details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+
+    put:
+      tags:
+        - Categories
+      summary: Update category
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryUpdate'
+      responses:
+        '200':
+          description: Category updated successfully
+
+    delete:
+      tags:
+        - Categories
+      summary: Delete category
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Category deleted successfully
+
+  # SPECIFICATIONS ENDPOINTS
+  /products/{slug}/specifications:
+    get:
+      tags:
+        - Specifications
+      summary: Get product specifications
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Product specifications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductSpec'
+
+    post:
+      tags:
+        - Specifications
+      summary: Add specification to product
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductSpecCreate'
+      responses:
+        '201':
+          description: Specification added successfully
+
+  /products/{slug}/specifications/{spec_id}:
+    put:
+      tags:
+        - Specifications
+      summary: Update product specification
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: spec_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductSpecUpdate'
+      responses:
+        '200':
+          description: Specification updated successfully
+
+    delete:
+      tags:
+        - Specifications
+      summary: Delete product specification
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: spec_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Specification deleted successfully
+
+  # VARIANTS ENDPOINTS
+  /products/{slug}/variants:
+    get:
+      tags:
+        - Variants
+      summary: Get product variants
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Product variants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductVariant'
+
+    post:
+      tags:
+        - Variants
+      summary: Add variant to product
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductVariantCreate'
+      responses:
+        '201':
+          description: Variant added successfully
+
+  /products/{slug}/variants/{variant_id}:
+    put:
+      tags:
+        - Variants
+      summary: Update product variant
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: variant_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductVariantUpdate'
+      responses:
+        '200':
+          description: Variant updated successfully
+
+    delete:
+      tags:
+        - Variants
+      summary: Delete product variant
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: variant_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Variant deleted successfully
+
+  # IMAGES ENDPOINTS
+  /images/upload:
+    post:
+      tags:
+        - Images
+      summary: Upload image
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                alt_text:
+                  type: string
+                category:
+                  type: string
+                  enum: [product, hero, gallery, use-case]
+      responses:
+        '201':
+          description: Image uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+
+  /images/{image_id}:
+    get:
+      tags:
+        - Images
+      summary: Get image details
+      parameters:
+        - name: image_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Image details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+
+    delete:
+      tags:
+        - Images
+      summary: Delete image
+      parameters:
+        - name: image_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Image deleted successfully
+
+  /products/{slug}/images:
+    get:
+      tags:
+        - Images
+      summary: Get product images
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Product images
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Image'
+
+    post:
+      tags:
+        - Images
+      summary: Associate image with product
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image_id:
+                  type: string
+                type:
+                  type: string
+                  enum: [hero, gallery]
+                order:
+                  type: integer
+      responses:
+        '201':
+          description: Image associated successfully
+
+  # SEARCH ENDPOINTS
+  /search:
+    get:
+      tags:
+        - Products
+      summary: Global search across products and use cases
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [products, use-cases, all]
+            default: all
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  products:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Product'
+                  use_cases:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/UseCase'
+                  total:
+                    type: integer
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+        slug:
+          type: string
+        name:
+          type: string
+        shortDescription:
+          type: string
+        heroImage:
+          type: string
+        gallery:
+          type: array
+          items:
+            type: string
+        keyFeatures:
+          type: array
+          items:
+            type: string
+        brand:
+          type: string
+        model:
+          type: string
+        sku:
+          type: string
+        availability:
+          type: string
+          enum: [in-stock, pre-order, out-of-stock]
+        price:
+          type: string
+          nullable: true
+        ctaType:
+          type: string
+          enum: [buy, quote]
+        ctaLink:
+          type: string
+          nullable: true
+        useCases:
+          type: array
+          items:
+            type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    ProductDetailed:
+      allOf:
+        - $ref: '#/components/schemas/Product'
+        - type: object
+          properties:
+            specs:
+              type: array
+              items:
+                $ref: '#/components/schemas/ProductSpec'
+            variants:
+              type: array
+              items:
+                $ref: '#/components/schemas/ProductVariant'
+            compatibility:
+              type: array
+              items:
+                type: string
+            accessories:
+              type: array
+              items:
+                type: string
+            datasheets:
+              type: array
+              items:
+                $ref: '#/components/schemas/Document'
+            manuals:
+              type: array
+              items:
+                $ref: '#/components/schemas/Document'
+            certifications:
+              type: array
+              items:
+                type: string
+            seoMetaTitle:
+              type: string
+            seoMetaDescription:
+              type: string
+
+    ProductCreate:
+      type: object
+      required:
+        - name
+        - shortDescription
+        - brand
+        - model
+        - sku
+      properties:
+        name:
+          type: string
+        shortDescription:
+          type: string
+        heroImage:
+          type: string
+        gallery:
+          type: array
+          items:
+            type: string
+        keyFeatures:
+          type: array
+          items:
+            type: string
+        brand:
+          type: string
+        model:
+          type: string
+        sku:
+          type: string
+        availability:
+          type: string
+          enum: [in-stock, pre-order, out-of-stock]
+          default: in-stock
+        price:
+          type: string
+        ctaType:
+          type: string
+          enum: [buy, quote]
+          default: quote
+        ctaLink:
+          type: string
+        useCases:
+          type: array
+          items:
+            type: string
+        seoMetaTitle:
+          type: string
+        seoMetaDescription:
+          type: string
+
+    ProductUpdate:
+      allOf:
+        - $ref: '#/components/schemas/ProductCreate'
+        - type: object
+          properties:
+            slug:
+              type: string
+
+    ProductSpec:
+      type: object
+      properties:
+        id:
+          type: string
+        category:
+          type: string
+        specs:
+          type: object
+          additionalProperties:
+            type: string
+
+    ProductSpecCreate:
+      type: object
+      required:
+        - category
+        - specs
+      properties:
+        category:
+          type: string
+        specs:
+          type: object
+          additionalProperties:
+            type: string
+
+    ProductSpecUpdate:
+      allOf:
+        - $ref: '#/components/schemas/ProductSpecCreate'
+
+    ProductVariant:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+
+    ProductVariantCreate:
+      type: object
+      required:
+        - name
+        - options
+      properties:
+        name:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+
+    ProductVariantUpdate:
+      allOf:
+        - $ref: '#/components/schemas/ProductVariantCreate'
+
+    UseCase:
+      type: object
+      properties:
+        id:
+          type: string
+        slug:
+          type: string
+        title:
+          type: string
+        summary:
+          type: string
+        heroImage:
+          type: string
+        industries:
+          type: array
+          items:
+            type: string
+        benefits:
+          type: array
+          items:
+            type: string
+        featuredProducts:
+          type: array
+          items:
+            type: string
+        seoMetaTitle:
+          type: string
+        seoMetaDescription:
+          type: string
+
+    UseCaseDetailed:
+      allOf:
+        - $ref: '#/components/schemas/UseCase'
+        - type: object
+          properties:
+            longDescription:
+              type: string
+
+    UseCaseCreate:
+      type: object
+      required:
+        - title
+        - summary
+      properties:
+        title:
+          type: string
+        summary:
+          type: string
+        longDescription:
+          type: string
+        heroImage:
+          type: string
+        industries:
+          type: array
+          items:
+            type: string
+        benefits:
+          type: array
+          items:
+            type: string
+        featuredProducts:
+          type: array
+          items:
+            type: string
+        seoMetaTitle:
+          type: string
+        seoMetaDescription:
+          type: string
+
+    UseCaseUpdate:
+      allOf:
+        - $ref: '#/components/schemas/UseCaseCreate'
+        - type: object
+          properties:
+            slug:
+              type: string
+
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        parentId:
+          type: string
+          nullable: true
+        order:
+          type: integer
+
+    CategoryCreate:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        parentId:
+          type: string
+        order:
+          type: integer
+
+    CategoryUpdate:
+      allOf:
+        - $ref: '#/components/schemas/CategoryCreate'
+        - type: object
+          properties:
+            slug:
+              type: string
+
+    Image:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+        filename:
+          type: string
+        altText:
+          type: string
+        size:
+          type: integer
+        mimeType:
+          type: string
+        category:
+          type: string
+          enum: [product, hero, gallery, use-case]
+        createdAt:
+          type: string
+          format: date-time
+
+    Document:
+      type: object
+      properties:
+        name:
+          type: string
+        url:
+          type: string
+        type:
+          type: string
+          enum: [datasheet, manual]
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        totalPages:
+          type: integer
+        hasNext:
+          type: boolean
+        hasPrev:
+          type: boolean
+
+    ProductFilters:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: string
+        brands:
+          type: array
+          items:
+            type: string
+        availability:
+          type: array
+          items:
+            type: string
+        useCases:
+          type: array
+          items:
+            type: string
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
