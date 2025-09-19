@@ -46,7 +46,7 @@ const Partnerships = () => {
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    className="w-full h-24 object-contain"
+                    className="w-full h-40 object-contain"
                     onLoad={() => console.log(`${partner.name} logo loaded`)}
                     onError={(e) => {
                       console.error(`Failed to load ${partner.name} logo`);
