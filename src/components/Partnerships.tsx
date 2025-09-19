@@ -44,28 +44,21 @@ const Partnerships = () => {
             <CarouselContent className="-ml-4">
               {partners.map((partner, index) => (
                 <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                   <Card className="h-32 hover:shadow-lg transition-shadow bg-white border">
-                     <CardContent className="p-6 flex items-center justify-center h-full">
-                       <img 
-                         src={partner.logo} 
-                         alt={`${partner.name} logo`}
-                         className="max-w-full max-h-full object-contain hover:scale-105 transition-all duration-300"
-                         style={{ maxWidth: '120px', maxHeight: '60px' }}
-                         onLoad={() => console.log(`${partner.name} logo loaded successfully`)}
-                         onError={(e) => {
-                           console.log(`Failed to load ${partner.name} logo from ${partner.logo}`);
-                           // Fallback to text if logo fails to load
-                           const target = e.currentTarget as HTMLImageElement;
-                           target.style.display = 'none';
-                           const span = target.nextElementSibling as HTMLElement;
-                           if (span) span.style.display = 'block';
-                         }}
-                       />
-                       <span className="text-sm font-medium text-muted-foreground hidden">
-                         {partner.name}
-                       </span>
-                     </CardContent>
-                   </Card>
+                  <div className="h-24 flex items-center justify-center bg-white rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="max-w-full max-h-full object-contain hover:scale-105 transition-all duration-300"
+                      style={{ maxWidth: '150px', maxHeight: '80px' }}
+                      onLoad={() => console.log(`${partner.name} logo loaded`)}
+                      onError={(e) => {
+                        console.error(`Failed to load ${partner.name} logo`);
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.insertAdjacentHTML('afterend', `<div class="text-sm text-gray-600">${partner.name}</div>`);
+                      }}
+                    />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
