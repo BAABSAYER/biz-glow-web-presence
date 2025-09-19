@@ -45,7 +45,7 @@ const Partnerships = () => {
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    className="w-full h-32 object-contain hover:scale-105 transition-all duration-300"
+                    className="w-full h-32 object-contain hover:scale-105 transition-all duration-300 bg-transparent"
                     onLoad={() => console.log(`${partner.name} logo loaded`)}
                     onError={(e) => {
                       console.error(`Failed to load ${partner.name} logo`);
