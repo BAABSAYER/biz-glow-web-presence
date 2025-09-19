@@ -42,18 +42,20 @@ const Partnerships = () => {
             <CarouselContent className="-ml-4">
               {partners.map((partner, index) => (
                 <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <img 
-                    src={partner.logo} 
-                    alt={`${partner.name} logo`}
-                    className="w-full h-32 object-contain hover:scale-105 transition-all duration-300 bg-transparent"
-                    onLoad={() => console.log(`${partner.name} logo loaded`)}
-                    onError={(e) => {
-                      console.error(`Failed to load ${partner.name} logo`);
-                      const target = e.currentTarget as HTMLImageElement;
-                      target.style.display = 'none';
-                      target.insertAdjacentHTML('afterend', `<div class="text-sm text-gray-600">${partner.name}</div>`);
-                    }}
-                  />
+                  <div className="bg-white rounded-lg p-4 flex items-center justify-center h-32">
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="max-w-full max-h-full object-contain hover:scale-105 transition-all duration-300"
+                      onLoad={() => console.log(`${partner.name} logo loaded`)}
+                      onError={(e) => {
+                        console.error(`Failed to load ${partner.name} logo`);
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.insertAdjacentHTML('afterend', `<div class="text-sm text-gray-600">${partner.name}</div>`);
+                      }}
+                    />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
