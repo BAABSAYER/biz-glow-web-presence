@@ -14,6 +14,7 @@ const translations = {
   'nav.home': 'Home',
   'nav.services': 'Services',
   'nav.products': 'Products',
+  'nav.partnerships': 'Partnerships',
   'nav.about': 'About',
   'nav.contact': 'Contact',
   
@@ -105,6 +106,20 @@ const translations = {
   'about.innovation.description': 'Constantly evolving with the latest technologies to provide cutting-edge solutions for our clients.',
   'about.quality.title': 'Quality',
   'about.quality.description': 'Committed to delivering superior quality solutions with comprehensive support and maintenance.',
+  
+  // Partnerships
+  'partnerships.title': 'Our Partnerships',
+  'partnerships.subtitle': 'Building strong relationships with leading technology partners to deliver exceptional solutions and expand our global reach',
+  'partnerships.technology.title': 'Technology Partners',
+  'partnerships.technology.description': 'Collaborating with industry leaders to integrate cutting-edge technologies into our solutions',
+  'partnerships.global.title': 'Global Network',
+  'partnerships.global.description': 'Expanding our reach through strategic partnerships across different markets and regions',
+  'partnerships.certified.title': 'Certified Excellence',
+  'partnerships.certified.description': 'Maintaining the highest standards through certified partnerships and quality assurance programs',
+  'partnerships.join.title': 'Join Our Partner Network',
+  'partnerships.join.description': 'Become part of our growing ecosystem of partners and distributors. Together, we can drive innovation and create value for businesses worldwide.',
+  'partnerships.join.partner_cta': 'Become a Partner',
+  'partnerships.join.distributor_cta': 'Become a Distributor',
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
