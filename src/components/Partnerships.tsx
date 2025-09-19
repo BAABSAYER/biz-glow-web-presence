@@ -13,7 +13,8 @@ const Partnerships = () => {
   const { t } = useLanguage();
 
   const partners = [
-    { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' }
+    { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' },
+    { name: 'Hikvision', logo: '/lovable-uploads/hikvision-logo.png' }
   ];
 
   return (
