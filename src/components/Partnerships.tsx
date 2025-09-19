@@ -44,25 +44,28 @@ const Partnerships = () => {
             <CarouselContent className="-ml-4">
               {partners.map((partner, index) => (
                 <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <Card className="h-32 hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6 flex items-center justify-center h-full">
-                      <img 
-                        src={partner.logo} 
-                        alt={`${partner.name} logo`}
-                        className="max-w-full max-h-full object-contain hover:scale-105 transition-all duration-300"
-                        onError={(e) => {
-                          // Fallback to text if logo fails to load
-                          const target = e.currentTarget as HTMLImageElement;
-                          target.style.display = 'none';
-                          const span = target.nextElementSibling as HTMLElement;
-                          if (span) span.style.display = 'block';
-                        }}
-                      />
-                      <span className="text-sm font-medium text-muted-foreground hidden">
-                        {partner.name}
-                      </span>
-                    </CardContent>
-                  </Card>
+                   <Card className="h-32 hover:shadow-lg transition-shadow bg-white border">
+                     <CardContent className="p-6 flex items-center justify-center h-full">
+                       <img 
+                         src={partner.logo} 
+                         alt={`${partner.name} logo`}
+                         className="max-w-full max-h-full object-contain hover:scale-105 transition-all duration-300"
+                         style={{ maxWidth: '120px', maxHeight: '60px' }}
+                         onLoad={() => console.log(`${partner.name} logo loaded successfully`)}
+                         onError={(e) => {
+                           console.log(`Failed to load ${partner.name} logo from ${partner.logo}`);
+                           // Fallback to text if logo fails to load
+                           const target = e.currentTarget as HTMLImageElement;
+                           target.style.display = 'none';
+                           const span = target.nextElementSibling as HTMLElement;
+                           if (span) span.style.display = 'block';
+                         }}
+                       />
+                       <span className="text-sm font-medium text-muted-foreground hidden">
+                         {partner.name}
+                       </span>
+                     </CardContent>
+                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
