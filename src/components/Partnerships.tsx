@@ -31,12 +31,13 @@ const Partnerships = () => {
                 src={partner.logo} 
                 alt={`${partner.name} logo`}
                 className="h-16 md:h-20 lg:h-24 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                onLoad={() => console.log(`${partner.name} logo loaded`)}
+                style={{ maxWidth: '200px' }}
+                onLoad={() => console.log(`✓ ${partner.name} PNG logo loaded successfully`)}
                 onError={(e) => {
-                  console.error(`Failed to load ${partner.name} logo`);
+                  console.error(`✗ Failed to load ${partner.name} PNG logo:`, e);
                   const target = e.currentTarget as HTMLImageElement;
                   target.style.display = 'none';
-                  target.insertAdjacentHTML('afterend', `<div class="text-sm text-gray-600">${partner.name}</div>`);
+                  target.insertAdjacentHTML('afterend', `<div class="text-sm text-muted-foreground">${partner.name}</div>`);
                 }}
               />
             </div>
