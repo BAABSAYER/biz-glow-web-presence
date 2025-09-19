@@ -5,7 +5,8 @@ const Partnerships = () => {
   const { t } = useLanguage();
 
   const partners = [
-    // Partners will be added when new logos are provided
+    { name: 'Hikvision', logo: '/lovable-uploads/hikvision-logo.png' },
+    { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' }
   ];
 
   return (
