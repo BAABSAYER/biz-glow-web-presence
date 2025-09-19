@@ -49,7 +49,7 @@ const Partnerships = () => {
                       <img 
                         src={partner.logo} 
                         alt={`${partner.name} logo`}
-                        className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                        className="max-w-full max-h-full object-contain hover:scale-105 transition-all duration-300"
                         onError={(e) => {
                           // Fallback to text if logo fails to load
                           const target = e.currentTarget as HTMLImageElement;
