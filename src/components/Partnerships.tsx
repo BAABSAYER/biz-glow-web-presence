@@ -6,42 +6,13 @@ import { Building2, Handshake, Globe, Award } from 'lucide-react';
 const Partnerships = () => {
   const { t } = useLanguage();
 
-  const partnerCategories = [
-    {
-      icon: Building2,
-      title: t('partnerships.technology.title'),
-      description: t('partnerships.technology.description'),
-      partners: [
-        'Urovo',
-        'Hikvision', 
-        'Huawei',
-        'Microsoft Partner',
-        'Intel Authorized',
-        'Android Enterprise'
-      ]
-    },
-    {
-      icon: Globe,
-      title: t('partnerships.global.title'),
-      description: t('partnerships.global.description'),
-      partners: [
-        'Middle East Distributors',
-        'European Partners',
-        'Asian Markets',
-        'African Network'
-      ]
-    },
-    {
-      icon: Award,
-      title: t('partnerships.certified.title'),
-      description: t('partnerships.certified.description'),
-      partners: [
-        'ISO 9001 Certified',
-        'Industry Standards',
-        'Quality Assurance',
-        'Best Practices'
-      ]
-    }
+  const partners = [
+    { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' },
+    { name: 'Hikvision', logo: '/lovable-uploads/hikvision-logo.png' },
+    { name: 'Huawei', logo: '/lovable-uploads/huawei-logo.png' },
+    { name: 'Microsoft', logo: '/lovable-uploads/microsoft-logo.png' },
+    { name: 'Intel', logo: '/lovable-uploads/intel-logo.png' },
+    { name: 'Android Enterprise', logo: '/lovable-uploads/android-logo.png' }
   ];
 
   return (
@@ -59,34 +30,28 @@ const Partnerships = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {partnerCategories.map((category, index) => {
-            const IconComponent = category.icon;
-            return (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow">
-                <CardContent className="p-8 text-center">
-                  <div className="flex justify-center mb-6">
-                    <div className="p-4 bg-primary/10 rounded-full">
-                      <IconComponent className="h-8 w-8 text-primary" />
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">
-                    {category.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    {category.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {category.partners.map((partner, partnerIndex) => (
-                      <Badge key={partnerIndex} variant="secondary" className="text-sm">
-                        {partner}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+          {partners.map((partner, index) => (
+            <Card key={index} className="h-32 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 flex items-center justify-center h-full">
+                <img 
+                  src={partner.logo} 
+                  alt={`${partner.name} logo`}
+                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  onError={(e) => {
+                    // Fallback to text if logo fails to load
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.style.display = 'none';
+                    const span = target.nextElementSibling as HTMLElement;
+                    if (span) span.style.display = 'block';
+                  }}
+                />
+                <span className="text-sm font-medium text-muted-foreground hidden">
+                  {partner.name}
+                </span>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         <div className="text-center bg-card p-8 rounded-lg border">
