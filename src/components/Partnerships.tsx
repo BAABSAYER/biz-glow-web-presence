@@ -15,10 +15,7 @@ const Partnerships = () => {
   const partners = [
     { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' },
     { name: 'Hikvision', logo: '/lovable-uploads/hikvision-logo.png' },
-    { name: 'Huawei', logo: '/lovable-uploads/huawei-logo.png' },
-    { name: 'Microsoft', logo: '/lovable-uploads/microsoft-logo.png' },
-    { name: 'Intel', logo: '/lovable-uploads/intel-logo.png' },
-    { name: 'Android Enterprise', logo: '/lovable-uploads/android-logo.png' }
+    { name: 'Huawei', logo: '/lovable-uploads/huawei-logo.png' }
   ];
 
   return (
