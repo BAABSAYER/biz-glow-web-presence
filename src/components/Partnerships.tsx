@@ -6,7 +6,8 @@ const Partnerships = () => {
 
   const partners = [
     { name: 'Hikvision', logo: '/lovable-uploads/hikvision-logo.png' },
-    { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' }
+    { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' },
+    { name: 'Huawei', logo: '/lovable-uploads/huawei-logo.png' }
   ];
 
   return (
