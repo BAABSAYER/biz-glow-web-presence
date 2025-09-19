@@ -13,7 +13,7 @@ const Partnerships = () => {
   const { t } = useLanguage();
 
   const partners = [
-    // Partners will be added when logos are provided
+    { name: 'Urovo', logo: '/lovable-uploads/urovo-logo.png' }
   ];
 
   return (
