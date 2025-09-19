@@ -31,7 +31,7 @@ const Partnerships = () => {
               <img 
                 src={partner.logo} 
                 alt={`${partner.name} logo`}
-                className="h-24 md:h-32 lg:h-40 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="h-24 md:h-32 lg:h-40 object-contain hover:scale-105 transition-all duration-300"
                 style={{ maxWidth: '200px' }}
                 onLoad={() => console.log(`✓ ${partner.name} PNG logo loaded successfully`)}
                 onError={(e) => {
