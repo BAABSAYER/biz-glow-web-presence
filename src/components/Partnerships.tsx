@@ -12,10 +12,12 @@ const Partnerships = () => {
       title: t('partnerships.technology.title'),
       description: t('partnerships.technology.description'),
       partners: [
+        'Urovo',
+        'Hikvision', 
+        'Huawei',
         'Microsoft Partner',
         'Intel Authorized',
-        'Android Enterprise',
-        'Zebra PartnerConnect'
+        'Android Enterprise'
       ]
     },
     {
