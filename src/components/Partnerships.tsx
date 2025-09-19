@@ -1,7 +1,13 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Building2, Handshake, Globe, Award } from 'lucide-react';
+import { Handshake } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Partnerships = () => {
   const { t } = useLanguage();
@@ -30,28 +36,42 @@ const Partnerships = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
-          {partners.map((partner, index) => (
-            <Card key={index} className="h-32 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex items-center justify-center h-full">
-                <img 
-                  src={partner.logo} 
-                  alt={`${partner.name} logo`}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                  onError={(e) => {
-                    // Fallback to text if logo fails to load
-                    const target = e.currentTarget as HTMLImageElement;
-                    target.style.display = 'none';
-                    const span = target.nextElementSibling as HTMLElement;
-                    if (span) span.style.display = 'block';
-                  }}
-                />
-                <span className="text-sm font-medium text-muted-foreground hidden">
-                  {partner.name}
-                </span>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="relative max-w-5xl mx-auto mb-16">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {partners.map((partner, index) => (
+                <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <Card className="h-32 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-6 flex items-center justify-center h-full">
+                      <img 
+                        src={partner.logo} 
+                        alt={`${partner.name} logo`}
+                        className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          // Fallback to text if logo fails to load
+                          const target = e.currentTarget as HTMLImageElement;
+                          target.style.display = 'none';
+                          const span = target.nextElementSibling as HTMLElement;
+                          if (span) span.style.display = 'block';
+                        }}
+                      />
+                      <span className="text-sm font-medium text-muted-foreground hidden">
+                        {partner.name}
+                      </span>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
 
         <div className="text-center bg-card p-8 rounded-lg border">
