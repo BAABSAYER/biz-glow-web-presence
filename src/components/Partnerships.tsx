@@ -1,13 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent } from '@/components/ui/card';
 import { Handshake } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const Partnerships = () => {
   const { t } = useLanguage();
@@ -32,35 +24,23 @@ const Partnerships = () => {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto mb-16">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {partners.map((partner, index) => (
-                <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <img 
-                    src={partner.logo} 
-                    alt={`${partner.name} logo`}
-                    className="w-full h-40 object-contain"
-                    onLoad={() => console.log(`${partner.name} logo loaded`)}
-                    onError={(e) => {
-                      console.error(`Failed to load ${partner.name} logo`);
-                      const target = e.currentTarget as HTMLImageElement;
-                      target.style.display = 'none';
-                      target.insertAdjacentHTML('afterend', `<div class="text-sm text-gray-600">${partner.name}</div>`);
-                    }}
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex" />
-          </Carousel>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 max-w-6xl mx-auto mb-16">
+          {partners.map((partner, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <img 
+                src={partner.logo} 
+                alt={`${partner.name} logo`}
+                className="h-16 md:h-20 lg:h-24 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                onLoad={() => console.log(`${partner.name} logo loaded`)}
+                onError={(e) => {
+                  console.error(`Failed to load ${partner.name} logo`);
+                  const target = e.currentTarget as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.insertAdjacentHTML('afterend', `<div class="text-sm text-gray-600">${partner.name}</div>`);
+                }}
+              />
+            </div>
+          ))}
         </div>
 
         <div className="text-center bg-card p-8 rounded-lg border">
