@@ -5,6 +5,8 @@ import Services from '@/components/Services';
 import UseCases from '@/components/UseCases';
 import Partnerships from '@/components/Partnerships';
 import About from '@/components/About';
+import Testimonials from '@/components/Testimonials';
+import CTASection from '@/components/CTASection';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -16,7 +18,9 @@ const Index = () => {
       <UseCases />
       <Services />
       <Partnerships />
+      <Testimonials />
       <About />
+      <CTASection />
       <Contact />
       <Footer />
     </div>
