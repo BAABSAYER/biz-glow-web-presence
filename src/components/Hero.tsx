@@ -33,7 +33,7 @@ const Hero = () => {
             </Button>
             
             {/* Growing Future Tagline */}
-            <p className="text-lg text-primary font-light tracking-wide">
+            <p className="text-lg text-primary font-light tracking-wide text-center">
               for growing future
             </p>
           </div>
