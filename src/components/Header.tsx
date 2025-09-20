@@ -17,7 +17,7 @@ const Header = () => {
             <img 
               src="/talah-tech-logo.png" 
               alt="Talah Tech Logo" 
-              className="h-24 w-auto"
+              className="h-32 w-auto"
             />
           </div>
 
