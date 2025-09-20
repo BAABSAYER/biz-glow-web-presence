@@ -1,59 +1,50 @@
 
-import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import footerBackground from '@/assets/footer-background.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-talah-primary text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div>
-              <img 
-                src="/lovable-uploads/ce904701-aa22-4496-93eb-6f03bd8fcf0d.png" 
-                alt="Talah Tech Logo" 
-                className="h-8 w-auto mb-4 filter brightness-0 invert"
-              />
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Empowering businesses with innovative IT solutions for a digital future.
-              </p>
-            </div>
-            
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-talah-accent transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-talah-accent transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+    <footer 
+      className="relative min-h-[400px] bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${footerBackground})` }}
+    >
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-primary/80" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        {/* Logo positioned in top left */}
+        <div className="mb-8">
+          <img 
+            src="/talah-tech-logo.png" 
+            alt="Talah Tech Logo" 
+            className="h-16 w-auto filter brightness-0 invert"
+          />
+        </div>
 
+        {/* Footer content */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-talah-accent transition-colors text-sm">
+                <a href="#home" className="text-gray-300 hover:text-accent transition-colors text-sm">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-talah-accent transition-colors text-sm">
+                <a href="#services" className="text-gray-300 hover:text-accent transition-colors text-sm">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-talah-accent transition-colors text-sm">
+                <a href="#about" className="text-gray-300 hover:text-accent transition-colors text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-talah-accent transition-colors text-sm">
+                <a href="#contact" className="text-gray-300 hover:text-accent transition-colors text-sm">
                   Contact
                 </a>
               </li>
@@ -75,18 +66,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-talah-accent" />
-                <span className="text-gray-300 text-sm">info@talahtech.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-talah-accent" />
-                <span className="text-gray-300 text-sm">+966 54 007 9024</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin size={16} className="text-talah-accent" />
-                <span className="text-gray-300 text-sm">Riyadh, Saudi Arabia</span>
-              </div>
+              <div className="text-gray-300 text-sm">info@talahtech.com</div>
+              <div className="text-gray-300 text-sm">+966 54 007 9024</div>
+              <div className="text-gray-300 text-sm">Riyadh, Saudi Arabia</div>
             </div>
           </div>
         </div>
