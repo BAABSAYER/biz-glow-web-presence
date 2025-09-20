@@ -76,29 +76,16 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-2xl transition-all duration-500 border-0 shadow-lg group bg-white/80 backdrop-blur-sm hover:bg-white">
-              <CardHeader className="text-center pb-4">
+            <Card key={index} className="hover:shadow-2xl transition-all duration-500 border-0 shadow-lg group bg-white/80 backdrop-blur-sm hover:bg-white text-center">
+              <CardContent className="p-8 space-y-4">
                 <div className="mx-auto mb-4 p-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <service.icon className="h-10 w-10 text-accent" />
+                  <service.icon className="h-12 w-12 text-accent" />
                 </div>
-                <CardTitle className="text-xl font-bold text-primary">
+                <CardTitle className="text-lg font-bold text-primary">
                   {service.title}
                 </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <CardDescription className="text-muted-foreground text-center leading-relaxed">
-                  {service.description}
-                </CardDescription>
-                <ul className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-3 h-3 bg-gradient-to-r from-accent to-secondary rounded-full mr-3 flex-shrink-0 shadow-sm"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
               </CardContent>
             </Card>
           ))}
