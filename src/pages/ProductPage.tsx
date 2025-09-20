@@ -51,20 +51,20 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white border-b sticky top-0 z-40 backdrop-blur-md bg-white/95">
+      <header className="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <nav className="flex items-center space-x-2 text-sm text-gray-500">
-              <Link to="/" className="hover:text-talah-primary transition-colors">Home</Link>
+            <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <Link to="/" className="hover:text-primary transition-colors">Home</Link>
               <ChevronRight className="h-4 w-4" />
-              <Link to="/products" className="hover:text-talah-primary transition-colors">Products</Link>
+              <Link to="/products" className="hover:text-primary transition-colors">Products</Link>
               <ChevronRight className="h-4 w-4" />
-              <span className="text-talah-primary font-medium truncate max-w-[200px]">{product.name}</span>
+              <span className="text-primary font-medium truncate max-w-[200px]">{product.name}</span>
             </nav>
             <Link to="/products">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="hover:bg-primary/10">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 <span className="hidden sm:inline">Back to Products</span>
                 <span className="sm:hidden">Back</span>
@@ -75,19 +75,19 @@ const ProductPage = () => {
       </header>
 
       {/* Product Hero */}
-      <section className="py-6 md:py-8">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-background via-primary/5 to-accent/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Image Gallery */}
             <div className="space-y-4 order-2 lg:order-1">
-              <div className="relative h-96 bg-gray-100 rounded-lg overflow-hidden">
+              <div className="relative h-96 bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl">
                 <img 
                   src={product.gallery[selectedImageIndex]} 
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 right-4">
-                  <Badge variant={product.availability === 'in-stock' ? 'default' : 'secondary'}>
+                  <Badge variant={product.availability === 'in-stock' ? 'default' : 'secondary'} className="shadow-lg">
                     {product.availability === 'in-stock' ? 'In Stock' : 
                      product.availability === 'pre-order' ? 'Pre-order' : 'Out of Stock'}
                   </Badge>
@@ -100,8 +100,8 @@ const ProductPage = () => {
                     <button
                       key={index}
                       onClick={() => setSelectedImageIndex(index)}
-                      className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                        selectedImageIndex === index ? 'border-talah-accent' : 'border-gray-200'
+                      className={`flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                        selectedImageIndex === index ? 'border-accent shadow-lg' : 'border-muted'
                       }`}
                     >
                       <img src={image} alt={`${product.name} ${index + 1}`} className="w-full h-full object-cover" />
@@ -114,29 +114,28 @@ const ProductPage = () => {
             {/* Product Info */}
             <div className="space-y-6 order-1 lg:order-2">
               <div>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-talah-primary mb-4 leading-tight">{product.name}</h1>
-                <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">{product.shortDescription}</p>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4 leading-tight">{product.name}</h1>
+                <p className="text-base md:text-lg text-muted-foreground mb-6 leading-relaxed">{product.shortDescription}</p>
                 
-                <div className="text-2xl font-bold text-talah-primary mb-6">
+                <div className="text-2xl font-bold text-primary mb-6">
                   {product.price || 'Contact for pricing'}
                 </div>
               </div>
 
-
               {/* Variants - Display Only */}
               {product.variants.length > 0 && (
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Available Configurations</h3>
+                  <h3 className="text-lg font-semibold text-primary">Available Configurations</h3>
                   {product.variants.map((variant) => (
                     <div key={variant.name}>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-muted-foreground mb-2">
                         {variant.name}
                       </label>
                       <div className="flex flex-wrap gap-2">
                         {variant.options.map((option) => (
                           <div
                             key={option}
-                            className="px-3 py-2 text-sm border border-gray-300 rounded-md bg-gray-50 text-gray-700"
+                            className="px-3 py-2 text-sm border border-muted rounded-lg bg-white/80 backdrop-blur-sm text-muted-foreground shadow-sm"
                           >
                             {option}
                           </div>
@@ -151,7 +150,7 @@ const ProductPage = () => {
               <div className="space-y-3">
                 <Button 
                   size="lg" 
-                  className="w-full bg-talah-accent hover:bg-talah-accent/90"
+                  className="w-full bg-accent hover:bg-accent/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={scrollToContact}
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
@@ -162,11 +161,11 @@ const ProductPage = () => {
               {/* Use Cases */}
               {relatedUseCases.length > 0 && (
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-3">Perfect for:</h3>
+                  <h3 className="font-semibold text-primary mb-3">Perfect for:</h3>
                   <div className="flex flex-wrap gap-2">
                     {relatedUseCases.map((useCase) => (
                       <Link key={useCase.id} to={`/use-cases/${useCase.slug}`}>
-                        <Badge variant="outline" className="hover:bg-talah-accent hover:text-white transition-colors">
+                        <Badge variant="outline" className="hover:bg-accent hover:text-white transition-colors border-accent text-accent">
                           {useCase.title}
                         </Badge>
                       </Link>
@@ -180,27 +179,27 @@ const ProductPage = () => {
       </section>
 
       {/* Product Details */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="features" className="w-full">
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="features">Key Features</TabsTrigger>
-              <TabsTrigger value="specs">Specifications</TabsTrigger>
-              <TabsTrigger value="downloads">Downloads</TabsTrigger>
-              <TabsTrigger value="accessories">Accessories</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 bg-white/80 backdrop-blur-sm shadow-lg">
+              <TabsTrigger value="features" className="data-[state=active]:bg-accent data-[state=active]:text-white">Key Features</TabsTrigger>
+              <TabsTrigger value="specs" className="data-[state=active]:bg-accent data-[state=active]:text-white">Specifications</TabsTrigger>
+              <TabsTrigger value="downloads" className="data-[state=active]:bg-accent data-[state=active]:text-white">Downloads</TabsTrigger>
+              <TabsTrigger value="accessories" className="data-[state=active]:bg-accent data-[state=active]:text-white">Accessories</TabsTrigger>
             </TabsList>
             
             <TabsContent value="features" className="mt-8">
-              <Card>
+              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>Key Features</CardTitle>
+                  <CardTitle className="text-primary">Key Features</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-4">
                     {product.keyFeatures.map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-talah-accent rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700">{feature}</span>
+                        <div className="w-3 h-3 bg-gradient-to-r from-accent to-secondary rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
+                        <span className="text-muted-foreground">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -211,16 +210,16 @@ const ProductPage = () => {
             <TabsContent value="specs" className="mt-8">
               <div className="space-y-6">
                 {product.specs.map((specGroup, index) => (
-                  <Card key={index}>
+                  <Card key={index} className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                     <CardHeader>
-                      <CardTitle className="text-lg">{specGroup.category}</CardTitle>
+                      <CardTitle className="text-lg text-primary">{specGroup.category}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="grid gap-3">
                         {Object.entries(specGroup.specs).map(([key, value]) => (
-                          <div key={key} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                            <span className="font-medium text-gray-600">{key}</span>
-                            <span className="text-gray-900">{value}</span>
+                          <div key={key} className="flex justify-between items-center py-2 border-b border-muted/30 last:border-b-0">
+                            <span className="font-medium text-muted-foreground">{key}</span>
+                            <span className="text-primary font-medium">{value}</span>
                           </div>
                         ))}
                       </div>
@@ -232,37 +231,37 @@ const ProductPage = () => {
             
             <TabsContent value="downloads" className="mt-8">
               <div className="grid md:grid-cols-2 gap-6">
-                <Card>
+                <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                   <CardHeader>
-                    <CardTitle>Datasheets</CardTitle>
+                    <CardTitle className="text-primary">Datasheets</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
                     {product.datasheets.map((datasheet, index) => (
                       <a
                         key={index}
                         href={datasheet.url}
-                        className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors"
+                        className="flex items-center justify-between p-3 border border-muted rounded-lg hover:bg-accent/10 transition-colors"
                       >
-                        <span className="font-medium">{datasheet.name}</span>
-                        <Download className="h-4 w-4 text-talah-accent" />
+                        <span className="font-medium text-muted-foreground">{datasheet.name}</span>
+                        <Download className="h-4 w-4 text-accent" />
                       </a>
                     ))}
                   </CardContent>
                 </Card>
                 
-                <Card>
+                <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                   <CardHeader>
-                    <CardTitle>Manuals & Documentation</CardTitle>
+                    <CardTitle className="text-primary">Manuals & Documentation</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
                     {product.manuals.map((manual, index) => (
                       <a
                         key={index}
                         href={manual.url}
-                        className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors"
+                        className="flex items-center justify-between p-3 border border-muted rounded-lg hover:bg-accent/10 transition-colors"
                       >
-                        <span className="font-medium">{manual.name}</span>
-                        <Download className="h-4 w-4 text-talah-accent" />
+                        <span className="font-medium text-muted-foreground">{manual.name}</span>
+                        <Download className="h-4 w-4 text-accent" />
                       </a>
                     ))}
                   </CardContent>
@@ -271,16 +270,16 @@ const ProductPage = () => {
             </TabsContent>
             
             <TabsContent value="accessories" className="mt-8">
-              <Card>
+              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>Compatible Accessories</CardTitle>
+                  <CardTitle className="text-primary">Compatible Accessories</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {product.accessories.map((accessory, index) => (
-                      <div key={index} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
-                        <h4 className="font-medium text-gray-900 mb-2">{accessory}</h4>
-                        <Button size="sm" variant="outline" onClick={scrollToContact}>
+                      <div key={index} className="p-4 border border-muted rounded-lg hover:shadow-lg transition-all duration-300 bg-white/50">
+                        <h4 className="font-medium text-primary mb-2">{accessory}</h4>
+                        <Button size="sm" variant="outline" onClick={scrollToContact} className="border-accent text-accent hover:bg-accent hover:text-white">
                           Get Quote
                         </Button>
                       </div>
@@ -295,12 +294,12 @@ const ProductPage = () => {
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-br from-background via-primary/5 to-accent/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-talah-primary mb-8">Related Products</h2>
+            <h2 className="text-2xl font-bold text-primary mb-8">Related Products</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {relatedProducts.map((relatedProduct) => (
-                <Card key={relatedProduct.id} className="group hover:shadow-lg transition-all duration-300">
+                <Card key={relatedProduct.id} className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:bg-white">
                   <div className="relative h-48 overflow-hidden rounded-t-lg">
                     <img 
                       src={relatedProduct.heroImage} 
@@ -309,12 +308,12 @@ const ProductPage = () => {
                     />
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="font-semibold text-lg mb-2 group-hover:text-talah-accent transition-colors">
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-accent transition-colors">
                       {relatedProduct.name}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4">{relatedProduct.shortDescription}</p>
+                    <p className="text-sm text-muted-foreground mb-4">{relatedProduct.shortDescription}</p>
                     <Link to={`/products/${relatedProduct.slug}`}>
-                      <Button size="sm" variant="outline" className="w-full">
+                      <Button size="sm" variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-white">
                         View Details
                         <ArrowRight className="ml-2 h-3 w-3" />
                       </Button>
@@ -328,9 +327,9 @@ const ProductPage = () => {
       )}
 
       {/* Sticky Mobile CTA */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t p-4 z-50">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t p-4 z-50 shadow-lg">
         <Button 
-          className="w-full bg-talah-accent hover:bg-talah-accent/90"
+          className="w-full bg-accent hover:bg-accent/90 font-semibold"
           onClick={scrollToContact}
         >
           <MessageCircle className="mr-2 h-4 w-4" />
