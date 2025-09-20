@@ -34,7 +34,7 @@ const Hero = () => {
             
             {/* Growing Future Tagline */}
             <p className="text-lg text-primary font-light tracking-wide text-center">
-              for growing future
+              growing future
             </p>
           </div>
         </div>
