@@ -20,12 +20,9 @@ const Hero = () => {
           <div className="ml-8 lg:ml-16">
             {/* Growing Future Tagline */}
             <div className="mb-8">
-              <h1 className="text-6xl lg:text-7xl font-bold text-white mb-4">
-                TALAH TECH
-              </h1>
-              <p className="text-2xl lg:text-3xl text-accent font-light tracking-wide">
+              <h1 className="text-6xl lg:text-7xl font-bold text-accent font-light tracking-wide">
                 for growing future
-              </p>
+              </h1>
             </div>
             
             {/* CTA Button */}
