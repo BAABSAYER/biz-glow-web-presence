@@ -1,18 +1,22 @@
 
-import footerBackground from '@/assets/footer-background.png';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer 
-      className="relative min-h-[400px] bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${footerBackground})` }}
-    >
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-primary/80" />
+    <footer className="relative min-h-[400px] bg-primary">
+      {/* Additional dark overlay to match the navy color */}
+      <div className="absolute inset-0 bg-primary/90" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        {/* Logo positioned in top left */}
+        <div className="mb-8">
+          <img 
+            src="/talah-tech-logo.png" 
+            alt="Talah Tech Logo" 
+            className="h-16 w-auto filter brightness-0 invert"
+          />
+        </div>
+
         {/* Footer content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
           {/* Quick Links */}
