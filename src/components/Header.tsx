@@ -38,46 +38,22 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className={`transition-colors font-medium ${
-              isScrolled 
-                ? 'text-primary hover:text-accent' 
-                : 'text-white hover:text-accent'
-            }`}>
+            <a href="#home" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.home')}
             </a>
-            <a href="#services" className={`transition-colors font-medium ${
-              isScrolled 
-                ? 'text-primary hover:text-accent' 
-                : 'text-white hover:text-accent'
-            }`}>
+            <a href="#services" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.services')}
             </a>
-            <a href="#use-cases" className={`transition-colors font-medium ${
-              isScrolled 
-                ? 'text-primary hover:text-accent' 
-                : 'text-white hover:text-accent'
-            }`}>
+            <a href="#use-cases" className="text-primary hover:text-accent transition-colors font-medium">
               Use Cases
             </a>
-            <a href="#partnerships" className={`transition-colors font-medium ${
-              isScrolled 
-                ? 'text-primary hover:text-accent' 
-                : 'text-white hover:text-accent'
-            }`}>
+            <a href="#partnerships" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.partnerships')}
             </a>
-            <a href="#about" className={`transition-colors font-medium ${
-              isScrolled 
-                ? 'text-primary hover:text-accent' 
-                : 'text-white hover:text-accent'
-            }`}>
+            <a href="#about" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.about')}
             </a>
-            <a href="#contact" className={`transition-colors font-medium ${
-              isScrolled 
-                ? 'text-primary hover:text-accent' 
-                : 'text-white hover:text-accent'
-            }`}>
+            <a href="#contact" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.contact')}
             </a>
           </nav>
@@ -88,7 +64,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={isScrolled ? 'text-primary' : 'text-white'}
+              className="text-primary"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
