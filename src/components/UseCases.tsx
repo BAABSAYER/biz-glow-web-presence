@@ -20,9 +20,9 @@ const UseCases = () => {
 
         <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8 mb-12">
           {useCases.map((useCase) => (
-            <Link key={useCase.id} to={`/use-cases/${useCase.slug}`}>
-              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:bg-white text-center cursor-pointer">
-                <CardContent className="p-8 space-y-4">
+            <Link key={useCase.id} to={`/use-cases/${useCase.slug}`} className="h-full">
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:bg-white text-center cursor-pointer h-full">
+                <CardContent className="p-8 space-y-4 flex flex-col items-center justify-center h-full">
                   <div className="relative h-16 w-16 mx-auto mb-4">
                     <img 
                       src={useCase.heroImage} 
