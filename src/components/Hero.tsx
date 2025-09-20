@@ -1,29 +1,39 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Monitor, Wifi, Smartphone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import heroBackground from '@/assets/talah-hero-background.jpg';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/50 pt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-talah-primary leading-tight">
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 Growing Future
-                <span className="block text-talah-accent">Through Technology</span>
+                <span className="block text-white/90">Through Technology</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl">
                 Empowering businesses with cutting-edge IT solutions. From POS systems to IoT innovations 
                 and enterprise mobility - we transform your digital vision into reality.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg"
-                className="bg-talah-primary hover:bg-talah-primary/90 text-white px-8 py-3 text-lg"
+                className="bg-white text-primary hover:bg-white/90 px-10 py-4 text-lg font-semibold shadow-lg"
                 onClick={() => {
                   const useCasesSection = document.getElementById('use-cases');
                   if (useCasesSection) {
@@ -37,48 +47,22 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-talah-accent text-talah-accent hover:bg-talah-accent hover:text-white px-8 py-3 text-lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary px-10 py-4 text-lg font-semibold"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 Get in Touch
               </Button>
             </div>
           </div>
 
-          {/* Right Content - Visual Elements */}
-          <div className="relative">
-            <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-blue-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation">
-                  <Monitor className="h-12 w-12 text-talah-primary mx-auto mb-3" />
-                  <h3 className="font-semibold text-talah-primary">POS Systems</h3>
-                  <p className="text-sm text-gray-600 mt-1">Modern retail solutions</p>
-                </div>
-                
-                <div className="text-center p-4 bg-cyan-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation" style={{animationDelay: '0.5s'}}>
-                  <Wifi className="h-12 w-12 text-talah-accent mx-auto mb-3" />
-                  <h3 className="font-semibold text-talah-primary">IoT Solutions</h3>
-                  <p className="text-sm text-gray-600 mt-1">Connected devices</p>
-                </div>
-                
-                <div className="text-center p-4 bg-cyan-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation" style={{animationDelay: '1s'}}>
-                  <Smartphone className="h-12 w-12 text-talah-accent mx-auto mb-3" />
-                  <h3 className="font-semibold text-talah-primary">Enterprise Mobility</h3>
-                  <p className="text-sm text-gray-600 mt-1">Mobile solutions</p>
-                </div>
-                
-                <div className="text-center p-4 bg-blue-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer float-animation" style={{animationDelay: '1.5s'}}>
-                  <div className="h-12 w-12 bg-talah-primary rounded-full mx-auto mb-3 flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">24/7</span>
-                  </div>
-                  <h3 className="font-semibold text-talah-primary">Support</h3>
-                  <p className="text-sm text-gray-600 mt-1">Always available</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Background decorative elements */}
-            <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-talah-accent/20 to-talah-primary/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-gradient-to-tr from-cyan-200/30 to-blue-200/30 rounded-full blur-3xl"></div>
+          {/* Right side - Logo area (already in background image) */}
+          <div className="hidden lg:block">
+            {/* This space is intentionally left for the logo in the background image */}
           </div>
         </div>
       </div>
