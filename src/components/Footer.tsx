@@ -13,15 +13,6 @@ const Footer = () => {
       <div className="absolute inset-0 bg-primary/80" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        {/* Logo positioned in top left */}
-        <div className="mb-8">
-          <img 
-            src="/talah-tech-logo.png" 
-            alt="Talah Tech Logo" 
-            className="h-16 w-auto filter brightness-0 invert"
-          />
-        </div>
-
         {/* Footer content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
           {/* Quick Links */}
