@@ -42,13 +42,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gradient-to-br from-background via-primary/5 to-accent/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-talah-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Get in Touch
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your business with our IT solutions? Contact us today for a consultation.
           </p>
         </div>
@@ -56,48 +56,56 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="space-y-6">
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-talah-primary">Contact Information</CardTitle>
+                <CardTitle className="text-primary font-bold">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-talah-accent" />
+              <CardContent className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl">
+                    <Mail className="h-6 w-6 text-accent" />
+                  </div>
                   <div>
-                    <div className="font-medium text-talah-primary">Email</div>
-                    <div className="text-gray-600">info@talahtech.com</div>
+                    <div className="font-semibold text-primary">Email</div>
+                    <div className="text-muted-foreground">info@talahtech.com</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-talah-accent" />
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl">
+                    <Phone className="h-6 w-6 text-accent" />
+                  </div>
                   <div>
-                    <div className="font-medium text-talah-primary">Phone</div>
-                    <div className="text-gray-600">+966 54 007 9024</div>
+                    <div className="font-semibold text-primary">Phone</div>
+                    <div className="text-muted-foreground">+966 54 007 9024</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-talah-accent" />
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl">
+                    <MapPin className="h-6 w-6 text-accent" />
+                  </div>
                   <div>
-                    <div className="font-medium text-talah-primary">Address</div>
-                    <div className="text-gray-600">Riyadh, Saudi Arabia</div>
+                    <div className="font-semibold text-primary">Address</div>
+                    <div className="text-muted-foreground">Riyadh, Saudi Arabia</div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* WhatsApp Chat */}
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6 text-center">
-                <MessageCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
-                <h3 className="font-semibold text-talah-primary mb-2">Chat with us</h3>
-                <p className="text-gray-600 text-sm mb-4">
+            <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="p-4 bg-green-50 rounded-2xl w-fit mx-auto mb-4">
+                  <MessageCircle className="h-12 w-12 text-green-500" />
+                </div>
+                <h3 className="font-bold text-primary mb-3">Chat with us</h3>
+                <p className="text-muted-foreground text-sm mb-6">
                   Get instant support via WhatsApp
                 </p>
                 <Button 
                   onClick={openWhatsApp}
-                  className="bg-green-500 hover:bg-green-600 text-white w-full"
+                  className="bg-green-500 hover:bg-green-600 text-white w-full font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Start WhatsApp Chat
                 </Button>
@@ -107,26 +115,26 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-talah-primary">Send us a Message</CardTitle>
+                <CardTitle className="text-primary font-bold text-xl">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
+                      <Label htmlFor="name" className="font-semibold text-primary">Full Name</Label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-talah-accent"
+                        className="border-2 border-muted focus:border-accent transition-colors duration-300"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email" className="font-semibold text-primary">Email</Label>
                       <Input
                         id="email"
                         name="email"
@@ -134,51 +142,51 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-talah-accent"
+                        className="border-2 border-muted focus:border-accent transition-colors duration-300"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                      <Label htmlFor="phone" className="font-semibold text-primary">Phone Number</Label>
                       <Input
                         id="phone"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="border-gray-300 focus:border-talah-accent"
+                        className="border-2 border-muted focus:border-accent transition-colors duration-300"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
+                      <Label htmlFor="subject" className="font-semibold text-primary">Subject</Label>
                       <Input
                         id="subject"
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-talah-accent"
+                        className="border-2 border-muted focus:border-accent transition-colors duration-300"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message" className="font-semibold text-primary">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={5}
-                      className="border-gray-300 focus:border-talah-accent"
+                      rows={6}
+                      className="border-2 border-muted focus:border-accent transition-colors duration-300"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-talah-primary hover:bg-talah-primary/90 text-white"
+                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Send Message
                   </Button>

@@ -11,28 +11,30 @@ const Partnerships = () => {
   ];
 
   return (
-    <section id="partnerships" className="py-20 bg-muted/50">
+    <section id="partnerships" className="py-20 bg-gradient-to-br from-accent/5 via-background to-primary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-4">
-            <Handshake className="h-12 w-12 text-primary mr-3" />
-            <h2 className="text-4xl font-bold text-foreground">
+          <div className="flex items-center justify-center mb-6">
+            <div className="p-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl mr-4 shadow-lg">
+              <Handshake className="h-12 w-12 text-accent" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">
               {t('partnerships.title')}
             </h2>
           </div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t('partnerships.subtitle')}
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 max-w-6xl mx-auto mb-16">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 lg:gap-20 max-w-6xl mx-auto mb-16">
           {partners.map((partner, index) => (
-            <div key={index} className="flex items-center justify-center">
+            <div key={index} className="flex items-center justify-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <img 
                 src={partner.logo} 
                 alt={`${partner.name} logo`}
-                className="h-24 md:h-32 lg:h-40 object-contain hover:scale-105 transition-all duration-300"
-                style={{ maxWidth: '200px' }}
+                className="h-20 md:h-24 lg:h-28 object-contain"
+                style={{ maxWidth: '180px' }}
                 onLoad={() => console.log(`✓ ${partner.name} PNG logo loaded successfully`)}
                 onError={(e) => {
                   console.error(`✗ Failed to load ${partner.name} PNG logo:`, e);
@@ -45,23 +47,23 @@ const Partnerships = () => {
           ))}
         </div>
 
-        <div className="text-center bg-card p-8 rounded-lg border">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
+        <div className="text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 p-12 rounded-3xl border border-accent/20 shadow-xl">
+          <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6">
             {t('partnerships.join.title')}
           </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
             {t('partnerships.join.description')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
+              className="inline-flex items-center justify-center px-10 py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105"
             >
               {t('partnerships.join.partner_cta')}
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-6 py-3 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md transition-colors font-medium"
+              className="inline-flex items-center justify-center px-10 py-4 border-2 border-accent text-accent bg-white hover:bg-accent hover:text-white rounded-xl transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105"
             >
               {t('partnerships.join.distributor_cta')}
             </a>

@@ -65,36 +65,36 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gradient-to-br from-background via-primary/5 to-accent/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-talah-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             {t('services.title')}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t('services.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg group">
+            <Card key={index} className="hover:shadow-2xl transition-all duration-500 border-0 shadow-lg group bg-white/80 backdrop-blur-sm hover:bg-white">
               <CardHeader className="text-center pb-4">
-                <div className="mx-auto mb-4 p-3 bg-gradient-to-br from-talah-accent/10 to-talah-primary/10 rounded-xl w-fit group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="h-8 w-8 text-talah-accent" />
+                <div className="mx-auto mb-4 p-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <service.icon className="h-10 w-10 text-accent" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-talah-primary">
+                <CardTitle className="text-xl font-bold text-primary">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <CardDescription className="text-gray-600 text-center">
+                <CardDescription className="text-muted-foreground text-center leading-relaxed">
                   {service.description}
                 </CardDescription>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-talah-accent rounded-full mr-3 flex-shrink-0"></div>
+                    <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                      <div className="w-3 h-3 bg-gradient-to-r from-accent to-secondary rounded-full mr-3 flex-shrink-0 shadow-sm"></div>
                       {feature}
                     </li>
                   ))}
