@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCases } from '@/data/useCases';
+import ctaBackground from '@/assets/cta-background.png';
 
 const UseCases = () => {
   return (
@@ -66,25 +67,33 @@ const UseCases = () => {
         </div>
 
         {/* Call to Action Section */}
-        <div className="text-center bg-gradient-to-r from-primary via-primary to-accent rounded-3xl p-12 text-white shadow-2xl">
-          <h3 className="text-3xl font-bold mb-4">Need a Custom Solution?</h3>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Our experts can design tailored technology solutions to meet your specific industry requirements
-          </p>
-          <Button 
-            size="lg"
-            variant="secondary"
-            className="bg-white text-primary hover:bg-background px-10 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            Contact Our Experts
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+        <div 
+          className="relative text-center rounded-3xl p-12 text-white shadow-2xl overflow-hidden"
+          style={{ backgroundImage: `url(${ctaBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
+          {/* Optional overlay for better text readability */}
+          <div className="absolute inset-0 bg-primary/20 rounded-3xl"></div>
+          
+          <div className="relative z-10">
+            <h3 className="text-3xl font-bold mb-4">Need a Custom Solution?</h3>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              Our experts can design tailored technology solutions to meet your specific industry requirements
+            </p>
+            <Button 
+              size="lg"
+              variant="secondary"
+              className="bg-white text-primary hover:bg-background px-10 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Contact Our Experts
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
