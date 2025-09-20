@@ -15,7 +15,7 @@ const Header = () => {
           {/* Logo - Made bigger */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/ce904701-aa22-4496-93eb-6f03bd8fcf0d.png" 
+              src="/talah-tech-logo.png" 
               alt="Talah Tech Logo" 
               className="h-12 w-auto"
             />
