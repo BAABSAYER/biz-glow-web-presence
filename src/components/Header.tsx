@@ -1,15 +1,30 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight;
+      setIsScrolled(window.scrollY > heroHeight - 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent z-50">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200' 
+        : 'bg-transparent'
+    }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Made bigger */}
@@ -23,22 +38,46 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-white hover:text-accent transition-colors font-medium">
+            <a href="#home" className={`transition-colors font-medium ${
+              isScrolled 
+                ? 'text-primary hover:text-accent' 
+                : 'text-white hover:text-accent'
+            }`}>
               {t('nav.home')}
             </a>
-            <a href="#services" className="text-white hover:text-accent transition-colors font-medium">
+            <a href="#services" className={`transition-colors font-medium ${
+              isScrolled 
+                ? 'text-primary hover:text-accent' 
+                : 'text-white hover:text-accent'
+            }`}>
               {t('nav.services')}
             </a>
-            <a href="#use-cases" className="text-white hover:text-accent transition-colors font-medium">
+            <a href="#use-cases" className={`transition-colors font-medium ${
+              isScrolled 
+                ? 'text-primary hover:text-accent' 
+                : 'text-white hover:text-accent'
+            }`}>
               Use Cases
             </a>
-            <a href="#partnerships" className="text-white hover:text-accent transition-colors font-medium">
+            <a href="#partnerships" className={`transition-colors font-medium ${
+              isScrolled 
+                ? 'text-primary hover:text-accent' 
+                : 'text-white hover:text-accent'
+            }`}>
               {t('nav.partnerships')}
             </a>
-            <a href="#about" className="text-white hover:text-accent transition-colors font-medium">
+            <a href="#about" className={`transition-colors font-medium ${
+              isScrolled 
+                ? 'text-primary hover:text-accent' 
+                : 'text-white hover:text-accent'
+            }`}>
               {t('nav.about')}
             </a>
-            <a href="#contact" className="text-white hover:text-accent transition-colors font-medium">
+            <a href="#contact" className={`transition-colors font-medium ${
+              isScrolled 
+                ? 'text-primary hover:text-accent' 
+                : 'text-white hover:text-accent'
+            }`}>
               {t('nav.contact')}
             </a>
           </nav>
@@ -49,7 +88,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white"
+              className={isScrolled ? 'text-primary' : 'text-white'}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
