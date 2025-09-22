@@ -1085,6 +1085,110 @@ export const products: Product[] = [
     structuredDataEnabled: true
   },
   {
+    id: 'urovo-k200',
+    slug: 'urovo-k200',
+    name: 'UROVO K200 Industrial Wired Barcode Scanner',
+    shortDescription: 'Ultra-rugged industrial wired barcode scanner with powerful DPM decoding capabilities and dual-color variable illumination for harsh manufacturing environments',
+    heroImage: '/lovable-uploads/urovo-logo.png',
+    gallery: ['/lovable-uploads/urovo-logo.png'],
+    keyFeatures: [
+      'Professional scanning engine with 1280×1080 high-pixel sensor',
+      'Superior DPM code reading on various marking methods',
+      'Dual-color variable illumination (red and white LEDs)',
+      'Ultra-rugged design with 1.8m drop resistance',
+      'IP54 dust and water protection rating',
+      'Triple scanning feedback modes (vibration, buzzer, LED)',
+      'Multi-system compatibility (Windows, Android, Linux)',
+      'Ergonomic design for extended use comfort'
+    ],
+    specs: [
+      {
+        category: 'Performance',
+        specs: {
+          'Sensor': '1280×1080, 1.3MP CMOS, 60 fps',
+          'Resolution': '≧3mil',
+          'Illumination': 'Warm white LED & red LED',
+          'Aimer': '650nm laser',
+          'Scan Angle': 'Roll 360°, pitch ±60°, skew ±60°'
+        }
+      },
+      {
+        category: 'Decode Capabilities',
+        specs: {
+          '1D Codes': 'UPC-A/E, EAN-8/13, Code 128, GS1-128, Code 39/93/11, Interleaved 2 of 5, Codabar, MSI Plessey, GS1 DataBar',
+          '2D Codes': 'QR Code, Data Matrix, PDF417',
+          'DPM Support': 'Laser engraving, dot peening, chemical etching, ink marking',
+          'Special Features': 'Low-contrast, reflective, curved surfaces'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'Interface': 'USB-HID, USB virtual serial port, RS232',
+          'Compatibility': 'Windows XP/7/8/10, Android, Linux',
+          'Connection': 'Plug and play functionality',
+          'Cable': 'Wired connection with durable cable'
+        }
+      },
+      {
+        category: 'Durability',
+        specs: {
+          'Protection Rating': 'IP54 dust and water proof',
+          'Drop Resistance': '1.8m drop test certified',
+          'Operating Temperature': '-20°C to +50°C',
+          'Storage Temperature': '-40°C to +70°C',
+          'Humidity': '5% to 95% (non-condensing)'
+        }
+      },
+      {
+        category: 'Physical',
+        specs: {
+          'Dimensions': '72 × 98 × 186mm',
+          'Weight': '200g',
+          'Feedback': 'Vibration motor, buzzer, LED indicator',
+          'Design': 'Ergonomic grip for extended use',
+          'Color': 'Industrial grade finish'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Interface', options: ['USB-HID', 'USB Virtual Serial', 'RS232'] },
+      { name: 'Cable Length', options: ['Standard 2m', 'Extended 3m'] }
+    ],
+    compatibility: [
+      'Manufacturing execution systems (MES)',
+      'Enterprise resource planning (ERP)',
+      'Warehouse management systems (WMS)',
+      'Quality control applications',
+      'Production line tracking'
+    ],
+    accessories: [
+      'Replacement Cables',
+      'Desktop Stand',
+      'Holster',
+      'Protective Case'
+    ],
+    datasheets: [
+      { name: 'Product Specifications', url: '/datasheets/urovo-k200-specs.pdf' },
+      { name: 'Technical Datasheet', url: '/datasheets/urovo-k200-datasheet.pdf' }
+    ],
+    manuals: [
+      { name: 'User Manual', url: '/manuals/urovo-k200-manual.pdf' },
+      { name: 'Programming Guide', url: '/manuals/urovo-k200-programming.pdf' }
+    ],
+    certifications: ['IP54', 'FCC', 'CE', 'RoHS'],
+    useCases: ['logistics-warehousing'],
+    ctaType: 'quote',
+    sku: 'UROVO-K200-001',
+    brand: 'UROVO',
+    model: 'K200',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO K200 Industrial Barcode Scanner | DPM Code Reader',
+    seoMetaDescription: 'Ultra-rugged industrial wired barcode scanner with superior DPM decoding, dual-color illumination, and IP54 protection. Perfect for manufacturing and logistics.',
+    structuredDataEnabled: true
+  },
+  {
     id: 'urovo-t3-nursing-station',
     slug: 'urovo-t3-nursing-station',
     name: 'UROVO T3 Series Medical Nursing Mobile Station',
