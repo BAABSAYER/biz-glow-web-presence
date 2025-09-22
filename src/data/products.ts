@@ -976,6 +976,124 @@ export const products: Product[] = [
     seoMetaTitle: 'UROVO FR7000 Fixed RFID Reader | Industrial UHF RFID System',
     seoMetaDescription: 'High-performance fixed RFID reader with Impinj E710 chip, 1300+ tags/sec read rate, and 12m range. Industrial-grade IP67 design for logistics applications.',
     structuredDataEnabled: true
+  },
+  {
+    id: 'urovo-t3-nursing-station',
+    slug: 'urovo-t3-nursing-station',
+    name: 'UROVO T3 Series Medical Nursing Mobile Station',
+    shortDescription: 'Advanced all-in-one medical-grade mobile workstation designed for healthcare professionals with ergonomic features and antibacterial protection',
+    heroImage: 'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-01-02/67764a838ffab.png',
+    gallery: [
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-01-02/67764a838ffab.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-01-02/67764a84b2157.jpg',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-01-02/67764a85cb5dd.jpg'
+    ],
+    keyFeatures: [
+      'Medical-grade ABS antibacterial plastic construction',
+      'Adjustable height with electric lifting mechanism',
+      'High-strength aluminum alloy column (110kg capacity)',
+      'Natural convection cooling system (fanless design)',
+      'Hidden keyboard and mouse tray for ergonomic workspace',
+      'Silent casters for smooth mobility in any direction',
+      'Modular design with customizable drawers and accessories',
+      'Compatible with medical disinfection solutions',
+      'Bio-hazard waste container and storage options',
+      'Sealed design for quiet, reliable operation'
+    ],
+    specs: [
+      {
+        category: 'Design & Mobility',
+        specs: {
+          'Height Adjustment': 'Electric lifting mechanism with adjustable height',
+          'Mobility': 'Silent casters with countertop handle for directional control',
+          'Weight Capacity': 'Up to 110kg total loading capacity',
+          'Column Material': 'High-strength aluminum alloy',
+          'Ergonomics': 'Optimized positioning for maximum efficiency and comfort'
+        }
+      },
+      {
+        category: 'Medical-Grade Computing',
+        specs: {
+          'Housing Material': 'ABS antibacterial plastic',
+          'Cooling System': 'Natural convection cooling (fanless)',
+          'Design': 'Complete sealed fanless design',
+          'Operation': 'Quiet, reliable operation for healthcare environments',
+          'Medical Compliance': 'Built for hygiene and performance standards'
+        }
+      },
+      {
+        category: 'Hygienic Properties',
+        specs: {
+          'Antibacterial Protection': 'ABS plastic inhibits bacterial growth',
+          'Disinfection Compatibility': 'Alcohol and povidone-iodine resistant',
+          'Cleaning': 'Resistant to everyday medical disinfection',
+          'Hygiene Standards': 'Superior hygiene maintenance',
+          'Safety': 'Safe and clean healthcare environment'
+        }
+      },
+      {
+        category: 'Workspace Features',
+        specs: {
+          'Keyboard Storage': 'Hidden keyboard and mouse tray',
+          'Workspace': 'Clutter-free, streamlined environment',
+          'Ergonomic Comfort': 'Enhanced typing and workspace comfort',
+          'Organization': 'Clean and organized workspace design',
+          'Accessibility': 'Easy access to computing peripherals'
+        }
+      },
+      {
+        category: 'Modular Customization',
+        specs: {
+          'Design Type': 'Highly flexible modular design',
+          'Storage Options': 'Wide range of customizable drawers',
+          'Accessories': 'Bio-hazard waste containers, side storage, trash bins',
+          'Adaptability': 'Customizable to meet specific healthcare needs',
+          'Maintenance': 'Easy maintenance and component replacement',
+          'Upgrades': 'Seamless upgrades and modifications'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Configuration', options: ['Standard Nursing Station', 'Extended Storage Configuration'] },
+      { name: 'Accessories', options: ['Basic Setup', 'Full Accessory Package'] },
+      { name: 'Drawer Configuration', options: ['Standard Drawers', 'Customized Drawer Layout'] }
+    ],
+    compatibility: [
+      'Hospital information systems',
+      'Electronic medical records (EMR) systems',
+      'Medical monitoring equipment',
+      'Healthcare software applications',
+      'Point-of-care systems'
+    ],
+    accessories: [
+      'Bio-hazard Waste Container',
+      'Side Storage Containers',
+      'Trash Bins',
+      'Additional Drawer Units',
+      'Keyboard and Mouse Set',
+      'Medical Equipment Mounts',
+      'Power Strip Module',
+      'Document Holders'
+    ],
+    datasheets: [
+      { name: 'Medical Station Specifications', url: '/datasheets/urovo-t3-nursing-specs.pdf' },
+      { name: 'Hygiene and Safety Certifications', url: '/datasheets/urovo-t3-medical-certifications.pdf' }
+    ],
+    manuals: [
+      { name: 'Setup and Installation Guide', url: '/manuals/urovo-t3-nursing-setup.pdf' },
+      { name: 'Maintenance and Cleaning Manual', url: '/manuals/urovo-t3-nursing-maintenance.pdf' }
+    ],
+    certifications: ['Medical Grade', 'Antibacterial Certified', 'Healthcare Standards Compliant'],
+    useCases: ['healthcare-medical'],
+    ctaType: 'quote',
+    sku: 'UROVO-T3-NURSING-001',
+    brand: 'UROVO',
+    model: 'T3 Series Nursing Mobile Station',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO T3 Medical Nursing Mobile Station | Healthcare Workstation',
+    seoMetaDescription: 'Advanced medical-grade mobile nursing station with antibacterial protection, adjustable height, 110kg capacity, and modular design for healthcare professionals.',
+    structuredDataEnabled: true
   }
   // Add more products as needed...
 ];
