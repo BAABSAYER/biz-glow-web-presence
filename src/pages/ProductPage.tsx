@@ -18,7 +18,11 @@ const ProductPage = () => {
     window.scrollTo(0, 0);
   }, [slug]);
   
+  console.log('Looking for product with slug:', slug);
+  console.log('Available products:', products.map(p => ({ id: p.id, slug: p.slug, name: p.name })));
+  
   const product = products.find(p => p.slug === slug);
+  console.log('Found product:', product ? product.name : 'Not found');
   
   if (!product) {
     return (
