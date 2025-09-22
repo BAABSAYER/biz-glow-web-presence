@@ -412,6 +412,123 @@ export const products: Product[] = [
     seoMetaTitle: 'UROVO i9100 Smart POS Terminal | Complete Payment Solution',
     seoMetaDescription: 'Professional smart POS terminal with 5.5" HD display, complete payment support, thermal printer, and financial certifications. Perfect for retail businesses.',
     structuredDataEnabled: true
+  },
+  {
+    id: 'urovo-i9000s',
+    slug: 'urovo-i9000s',
+    name: 'UROVO i9000S Rugged Smart POS Terminal',
+    shortDescription: 'Professional all-powerful rugged design POS terminal to redefine smart payment with industrial quality',
+    heroImage: 'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-10-24/6719ab20f18cb.png',
+    gallery: [
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-10-24/6719ab20f18cb.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-10-24/6719ab1a89c70.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-10-16/670f959256be0.png'
+    ],
+    keyFeatures: [
+      '5" HD capacitive touchscreen (720×1280)',
+      'Octa-core 2.0GHz processor for superior performance',
+      'Android OS with professional applications',
+      'Industrial-grade 1.5m drop resistance',
+      'Professional 2D scan engine with high sensitivity',
+      'Built-in thermal printer (58mm, 203dpi)',
+      '5000mAh high-capacity battery',
+      'eSIM communication support',
+      'Advanced NFC technology for contactless payments',
+      'Complete payment solution (magnetic, IC, contactless)',
+      'Financial certifications (PCI PTS V6, EMV, PayWave)'
+    ],
+    specs: [
+      {
+        category: 'Display & Interface',
+        specs: {
+          'Screen Size': '5.0 inches capacitive touchscreen',
+          'Resolution': '720 × 1280 HD',
+          'Dimensions': '184mm × 81mm × 51mm (32mm thinnest)',
+          'Weight': '521g',
+          'Buttons': 'Volume +/-, Power, Scan x2, Custom, Fn, Cancel, Delete, Enter'
+        }
+      },
+      {
+        category: 'Performance',
+        specs: {
+          'Processor': 'Octa-core 2.0GHz',
+          'Memory': '3GB RAM / 32GB ROM (4GB/64GB optional)',
+          'Operating System': 'Android',
+          'Battery': '3.8V / 5000mAh (Low-temperature battery optional)',
+          'Durability': 'Industrial-grade 1.5m drop resistance'
+        }
+      },
+      {
+        category: 'Payment & Scanning',
+        specs: {
+          'Payment Methods': 'Magnetic stripe, IC Card, Contactless Card (NFC)',
+          'Scanning': '2D scan engine, 1D/2D barcode reading',
+          'Camera': '5MP AF rear camera (13MP AF optional)',
+          'NFC': 'NFC Forum and EMVCo compliant',
+          'Printer': '58mm thermal printing, 203dpi, 30mm roll size'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'Cellular': '4G, 3G, 2G networks with eSIM support',
+          'WiFi': '2.4G/5G dual-band, IEEE 802.11 a/b/g/n/ac',
+          'Positioning': 'GPS, A-GPS, Beidou, GLONASS, Galileo',
+          'Interfaces': 'USB Type-C, DC Jack, 3.5mm Audio, 8-pin Pogopin',
+          'Wireless': 'Advanced NFC for expanded applications'
+        }
+      },
+      {
+        category: 'Environmental & Certifications',
+        specs: {
+          'Operating Temperature': '0°C to 50°C',
+          'Storage Temperature': '-20°C to 70°C',
+          'Humidity': '5%RH to 95%RH (non-condensing)',
+          'Certifications': 'PCI PTS V6, EMV L1&L2, EMV Contactless L1, MasterCard Contactless, Visa PayWave, TQM, ATEX'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Memory', options: ['3GB/32GB', '4GB/64GB'] },
+      { name: 'Camera', options: ['5MP AF', '13MP AF'] },
+      { name: 'Battery', options: ['Standard 5000mAh', 'Low-temperature Battery'] }
+    ],
+    compatibility: [
+      'Charging cradles and docks',
+      'POS stands and holders',
+      'Vehicle mounts',
+      'Protective holsters',
+      'Multi-function HUBs'
+    ],
+    accessories: [
+      'Charging Cradle',
+      'Dual-slot Battery Charger',
+      'POS Stand',
+      'Hand Strap',
+      'Optical Fingerprint Scanner (FAP20)',
+      'Multi-Function HUB',
+      'Holster',
+      'Low-temperature Battery'
+    ],
+    datasheets: [
+      { name: 'Product Specifications', url: '/datasheets/urovo-i9000s-specs.pdf' },
+      { name: 'Payment Certifications', url: '/datasheets/urovo-i9000s-certifications.pdf' }
+    ],
+    manuals: [
+      { name: 'User Manual', url: '/manuals/urovo-i9000s-manual.pdf' },
+      { name: 'Quick Start Guide', url: '/manuals/urovo-i9000s-quickstart.pdf' }
+    ],
+    certifications: ['PCI PTS V6', 'EMV L1&L2', 'EMV Contactless L1', 'MasterCard Contactless', 'Visa PayWave', 'TQM', 'ATEX'],
+    useCases: ['retail-pos'],
+    ctaType: 'quote',
+    sku: 'UROVO-I9000S-001',
+    brand: 'UROVO',
+    model: 'i9000S',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO i9000S Rugged Smart POS Terminal | Industrial Payment Solution',
+    seoMetaDescription: 'Rugged smart POS terminal with 5" HD display, octa-core processor, industrial durability, and complete payment certifications. Built for demanding environments.',
+    structuredDataEnabled: true
   }
   // Add more products as needed...
 ];
