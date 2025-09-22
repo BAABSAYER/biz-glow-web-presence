@@ -367,9 +367,9 @@ export const products: Product[] = [
     slug: 'urovo-ct48',
     name: 'UROVO CT48 Enterprise Mobile Computer',
     shortDescription: 'Lightweight enterprise mobile computer with professional scanning for efficient warehouse operations',
-    heroImage: 'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-21/6492a4f565ab4.png',
+    heroImage: '/src/assets/urovo-ct48-hero.jpg',
     gallery: [
-      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-21/6492a4f565ab4.png',
+      '/src/assets/urovo-ct48-hero.jpg',
       'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-21/6492a4f9bee0e.png',
       'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-27/649a9fd2702ab.png'
     ],
