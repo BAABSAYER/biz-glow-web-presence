@@ -529,6 +529,124 @@ export const products: Product[] = [
     seoMetaTitle: 'UROVO i9000S Rugged Smart POS Terminal | Industrial Payment Solution',
     seoMetaDescription: 'Rugged smart POS terminal with 5" HD display, octa-core processor, industrial durability, and complete payment certifications. Built for demanding environments.',
     structuredDataEnabled: true
+  },
+  {
+    id: 'urovo-dt66',
+    slug: 'urovo-dt66',
+    name: 'UROVO DT66 Rugged Mobile Computer',
+    shortDescription: 'Ultra-rugged 6.5" mobile computer with 5G connectivity for logistics and warehousing operations',
+    heroImage: 'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-08-27/66cd8025612a7.png',
+    gallery: [
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-08-27/66cd8025612a7.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-06-14/666be04b48e5b.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-08-07/66b2d4c63520e.png'
+    ],
+    keyFeatures: [
+      '6.5" HD+ display (720×1600 or 1080×2408 optional)',
+      'Qualcomm Octa-core processor for high performance',
+      '5G/4G/3G/2G cellular connectivity',
+      'WiFi 6E with 2x2 MU-MIMO support',
+      'Professional 1D/2D barcode scanning engine',
+      'IP68 rated with 1.5m drop resistance',
+      '5000mAh hot-swappable battery',
+      'Dual cameras (5MP front, 13MP rear with PDAF)',
+      'Multi-positioning systems (GPS, BEIDOU, GLONASS, Galileo)',
+      'Gorilla Glass with glove and wet finger support'
+    ],
+    specs: [
+      {
+        category: 'Display & Interface',
+        specs: {
+          'Screen Size': '6.5 inches',
+          'Resolution': '720 × 1600 (1080 × 2408 optional)',
+          'Touch Technology': 'Gorilla Glass capacitive multi-touch',
+          'Brightness': 'At least 450 nits',
+          'Dimensions': '175.8mm L × 76.5mm W × 14.5mm D',
+          'Weight': '283g (Standard), 277g (Optional)'
+        }
+      },
+      {
+        category: 'Performance',
+        specs: {
+          'Processor': 'Qualcomm Octa-core',
+          'Memory': '4GB RAM / 64GB ROM (8GB/128GB optional)',
+          'Storage Expansion': 'Micro-SD up to 256GB',
+          'Operating System': 'Android',
+          'Battery': '3.85V / 5000mAh with hot swap support'
+        }
+      },
+      {
+        category: 'Scanning & Cameras',
+        specs: {
+          'Scan Engine': 'Professional 1D/2D barcode engine',
+          'Scan Support': 'International standard barcodes, screen display',
+          'Front Camera': '5MP FF',
+          'Rear Camera': '13MP PDAF (Optional iToF camera)',
+          'Audio': 'Dual-microphone noise cancellation, 1.5W speaker'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'Cellular': '5G/4G/3G/2G networks',
+          'WiFi': 'WiFi 6E, 2.4G/5G dual-band, 2x2 MU-MIMO',
+          'Standards': 'IEEE 802.11a/b/g/n/ac/d/e/h/i/k/r/v/w/ax',
+          'SIM': 'Nano-SIM × 2 (eSIM reserved support)',
+          'Positioning': 'GPS, BEIDOU, GLONASS, Galileo'
+        }
+      },
+      {
+        category: 'Durability',
+        specs: {
+          'IP Rating': 'IP68',
+          'Drop Spec': '1.5m drop resistance',
+          'Operating Temperature': '-20°C to +60°C',
+          'Storage Temperature': '-40°C to +70°C',
+          'Humidity': '5%RH to 95%RH (non-condensing)',
+          'ESD': '±15kV Air, ±8kV contact'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Memory', options: ['4GB/64GB', '8GB/128GB'] },
+      { name: 'Display', options: ['720×1600 HD+', '1080×2408 Full HD'] },
+      { name: 'Camera', options: ['Standard', 'Optional iToF Camera'] }
+    ],
+    compatibility: [
+      'Trigger handle accessories',
+      'Rugged protective boots',
+      'USB/Ethernet charging cradles',
+      'Vehicle mounts and docks',
+      'Holsters and carrying cases'
+    ],
+    accessories: [
+      'Trigger Handle',
+      'Rugged Boot',
+      'USB/Ethernet Charging Cradle',
+      'Screen Protector',
+      '4-Slot Battery Charging Cradle',
+      '5-Slot Charging Cradle',
+      'Hand Strap'
+    ],
+    datasheets: [
+      { name: 'Product Specifications', url: '/datasheets/urovo-dt66-specs.pdf' },
+      { name: 'Technical Datasheet', url: '/datasheets/urovo-dt66-datasheet.pdf' }
+    ],
+    manuals: [
+      { name: 'User Manual', url: '/manuals/urovo-dt66-manual.pdf' },
+      { name: 'Quick Start Guide', url: '/manuals/urovo-dt66-quickstart.pdf' }
+    ],
+    certifications: ['IP68', 'FCC', 'CE'],
+    useCases: ['logistics-warehousing'],
+    ctaType: 'quote',
+    sku: 'UROVO-DT66-001',
+    brand: 'UROVO',
+    model: 'DT66',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO DT66 Rugged Mobile Computer | 5G Logistics Scanner',
+    seoMetaDescription: 'Ultra-rugged 6.5" mobile computer with 5G connectivity, professional barcode scanning, and IP68 rating. Perfect for logistics and warehousing operations.',
+    structuredDataEnabled: true
   }
   // Add more products as needed...
 ];
