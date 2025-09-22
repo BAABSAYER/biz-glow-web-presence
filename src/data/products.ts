@@ -297,6 +297,121 @@ export const products: Product[] = [
     seoMetaTitle: 'Medical Tablet MT1 | Healthcare-Grade Tablet Computer',
     seoMetaDescription: 'Medical-grade tablet with antimicrobial coating, IP65 rating, and healthcare compliance. Designed for hospitals and clinical environments.',
     structuredDataEnabled: true
+  },
+  {
+    id: 'urovo-i9100',
+    slug: 'urovo-i9100',
+    name: 'UROVO i9100 Smart POS Terminal',
+    shortDescription: 'All-powerful smart point of sales terminal with complete payment support and financial certifications',
+    heroImage: 'https://enoss.urovo.com/images/i9100/img204.jpg',
+    gallery: [
+      'https://enoss.urovo.com/images/i9100/img204.jpg',
+      'https://enoss.urovo.com/images/i9100/i9100_02.png',
+      'https://enoss.urovo.com/images/i9100/img233.jpg'
+    ],
+    keyFeatures: [
+      '5.5" HD capacitive touchscreen (1280×720)',
+      'Quad-core ARM Cortex-A53 2.0GHz processor',
+      'Android OS with smooth user experience',
+      'Complete payment support (IC, contactless, magnetic stripe, QR)',
+      'Built-in thermal printer (58mm, 203dpi)',
+      '1D/2D barcode scanning capability',
+      '5200mAh large-capacity battery',
+      'EMV, PCI, PayPass, PayWave certified',
+      'Multiple connectivity options (4G LTE, WiFi, GPS)',
+      'Expandable docking base with USB and LAN ports'
+    ],
+    specs: [
+      {
+        category: 'Display & Interface',
+        specs: {
+          'Screen Size': '5.5 inches TFT-LCD HD',
+          'Resolution': '1280 × 720',
+          'Touch Technology': 'Ultra sensitive capacitive touch screen',
+          'Dimensions': '188mm × 81mm × 35mm (max 61mm)',
+          'Weight': '457g (Battery included)'
+        }
+      },
+      {
+        category: 'Performance',
+        specs: {
+          'Processor': 'Quad-core ARM Cortex-A53 2.0GHz',
+          'Memory': '2GB RAM',
+          'Storage': '8GB ROM (32GB optional)',
+          'Operating System': 'Android',
+          'Battery': '3.6V / 5200mAh (Typ.)'
+        }
+      },
+      {
+        category: 'Payment & Scanning',
+        specs: {
+          'Magnetic Card': 'Supports ISO7811/7812/7813, triple track, bi-directional',
+          'Chip Card': 'Meets ISO7816 standard',
+          'Contactless Card': 'Supports 14443A&14443B, MifareCard',
+          'Barcode Scanning': '1D/2D barcode scanning (Camera decoding)',
+          'Printer': '58mm thermal printing, 203dpi, 50-70mm/s'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'Cellular': 'FDD-LTE, TDD-LTE, WCDMA, GSM/EDGE/GPRS',
+          'WiFi': 'IEEE 802.11 a/b/g/n/ac 2.4GHz/5GHz',
+          'GPS': 'GPS, A-GPS, GLONASS, BD, Galileo',
+          'Camera': 'Rear 2MP FF (5MP AF optional), Front camera optional',
+          'Buttons': 'Home, Menu, Back, Volume +/-, Power'
+        }
+      },
+      {
+        category: 'Environmental',
+        specs: {
+          'Operating Temperature': '0°C to 50°C (32°F to 122°F)',
+          'Storage Temperature': '-20°C to 70°C (-4°F to 158°F)',
+          'Humidity': '5%RH to 95%RH (non-condensing)',
+          'Certifications': 'EMV, PCI, PayPass, PayWave'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Memory', options: ['2GB/8GB', '2GB/32GB'] },
+      { name: 'Camera', options: ['Standard 2MP', 'Enhanced 5MP AF'] },
+      { name: 'Fingerprint', options: ['Standard', 'Optional Fingerprint', 'Capacitive Fingerprint'] }
+    ],
+    compatibility: [
+      'Charging cradles and docks',
+      'Desktop stands',
+      'Vehicle mounts',
+      'Protective cases and holsters',
+      'Magic Box accessory'
+    ],
+    accessories: [
+      'Charging Cradle',
+      'Desktop Stand', 
+      'Holster',
+      'Silicone Rubber Protective Case',
+      'TPU Protective Case',
+      'Magic Box',
+      'Fingerprint Module (Optional)'
+    ],
+    datasheets: [
+      { name: 'Product Specifications', url: '/datasheets/urovo-i9100-specs.pdf' },
+      { name: 'Payment Certifications', url: '/datasheets/urovo-i9100-certifications.pdf' }
+    ],
+    manuals: [
+      { name: 'User Manual', url: '/manuals/urovo-i9100-manual.pdf' },
+      { name: 'Quick Start Guide', url: '/manuals/urovo-i9100-quickstart.pdf' }
+    ],
+    certifications: ['EMV', 'PCI', 'PayPass', 'PayWave', 'FCC', 'CE'],
+    useCases: ['retail-pos'],
+    ctaType: 'quote',
+    sku: 'UROVO-I9100-001',
+    brand: 'UROVO',
+    model: 'i9100',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO i9100 Smart POS Terminal | Complete Payment Solution',
+    seoMetaDescription: 'Professional smart POS terminal with 5.5" HD display, complete payment support, thermal printer, and financial certifications. Perfect for retail businesses.',
+    structuredDataEnabled: true
   }
   // Add more products as needed...
 ];
