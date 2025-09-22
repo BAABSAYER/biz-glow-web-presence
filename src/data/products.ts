@@ -861,6 +861,121 @@ export const products: Product[] = [
     seoMetaTitle: 'UROVO DT610 RFID Mobile Computer | Next-Gen UHF RFID Scanner',
     seoMetaDescription: 'Revolutionary RFID mobile computer with integrated UHF RFID, 6" FHD+ display, Wi-Fi 7, and UWB tracking. Perfect for advanced logistics and retail operations.',
     structuredDataEnabled: true
+  },
+  {
+    id: 'urovo-fr7000',
+    slug: 'urovo-fr7000',
+    name: 'UROVO FR7000 Series Fixed RFID Reader',
+    shortDescription: 'Ultra-high frequency integrated fixed RFID reader with outstanding performance for industrial logistics applications',
+    heroImage: 'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-02-19/67b5a6ef2c2e7.png',
+    gallery: [
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-02-19/67b5a6ef2c2e7.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-08-22/66c704f7e30b7.jpg',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2024-08-22/66c6e8575df82.jpg'
+    ],
+    keyFeatures: [
+      'Advanced Impinj E710 chip for superior performance',
+      'Rapid read rates up to 1300+ tags per second',
+      '99.7% accuracy rate for fast-moving RFID tags',
+      'Built-in antenna with compact design for easy deployment',
+      'Two antenna options: 6dBi (7m range) and 9dBi (12m range)',
+      'Extensive interfaces: RS232, RJ45, RS485, Wiegand, GPIO, USB2.0',
+      'IP67 industrial-grade dustproof and waterproof design',
+      'Plastic and aluminum alloy housing for durability',
+      'Adjustable RF output power (0-30dBm)',
+      'POE power supply option for flexible installation'
+    ],
+    specs: [
+      {
+        category: 'Performance',
+        specs: {
+          'Chip Technology': 'Advanced Impinj E710',
+          'Read Rate': 'Up to 1300+ tags per second',
+          'Accuracy': '99.7% for fast-moving RFID tags',
+          'Frequency Range': '860-960MHz (adjustable for different regions)',
+          'Protocol': 'ISO18000-6C (EPC C1G2)'
+        }
+      },
+      {
+        category: 'RF Specifications',
+        specs: {
+          'RF Output Power': '0-30dBm (adjustable)',
+          'Reading Range': '7m (6dBi antenna) / 12m (9dBi antenna)',
+          'Antenna Options': '6dBi and 9dBi circular polarized antennas',
+          'Signal Efficiency': 'Minimized power loss with built-in antenna'
+        }
+      },
+      {
+        category: 'Physical Specifications',
+        specs: {
+          'Dimensions (6dBi)': '130mm × 130mm × 50mm',
+          'Dimensions (9dBi)': '257mm × 257mm × 52mm',
+          'Weight (6dBi)': '600g',
+          'Weight (9dBi)': '1800g',
+          'Housing': 'Plastic and aluminum alloy construction'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'Standard Interfaces': 'RS232, RJ45',
+          'Optional Interfaces': 'RS485, Wiegand, GPIO, USB2.0',
+          'Power Supply': '+9V power supply',
+          'POE Support': 'Optional POE power supply',
+          'Compatibility': 'Unmatched compatibility for any application scenario'
+        }
+      },
+      {
+        category: 'Environmental',
+        specs: {
+          'IP Rating': 'IP67 (dustproof & waterproof)',
+          'Operating Temperature': '-10°C to +55°C',
+          'Storage Temperature': '-20°C to +75°C',
+          'Humidity': '5%RH to 95%RH (non-condensing)',
+          'ESD': '±15kV Air, ±8kV contact',
+          'Resistance': 'Dust, oil, and moisture resistant'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Antenna', options: ['6dBi (7m range)', '9dBi (12m range)'] },
+      { name: 'Power Supply', options: ['Standard +9V', 'POE Power Supply'] },
+      { name: 'Interfaces', options: ['Standard (RS232, RJ45)', 'Extended (with RS485, Wiegand, GPIO, USB2.0)'] }
+    ],
+    compatibility: [
+      'RFID tag systems',
+      'Industrial automation systems',
+      'Warehouse management systems',
+      'Access control systems',
+      'Inventory tracking platforms'
+    ],
+    accessories: [
+      '6dBi Circular Polarized Antenna',
+      '9dBi Circular Polarized Antenna',
+      'POE Power Supply Module',
+      'Mounting Brackets',
+      'Interface Cables (RS232, RS485, USB2.0)',
+      'GPIO Connection Kit'
+    ],
+    datasheets: [
+      { name: 'FR7000 Technical Specifications', url: '/datasheets/urovo-fr7000-specs.pdf' },
+      { name: 'RFID Performance Guide', url: '/datasheets/urovo-fr7000-performance.pdf' }
+    ],
+    manuals: [
+      { name: 'Installation Manual', url: '/manuals/urovo-fr7000-installation.pdf' },
+      { name: 'Configuration Guide', url: '/manuals/urovo-fr7000-config.pdf' }
+    ],
+    certifications: ['IP67', 'FCC', 'CE', 'ISO18000-6C'],
+    useCases: ['logistics-warehousing'],
+    ctaType: 'quote',
+    sku: 'UROVO-FR7000-001',
+    brand: 'UROVO',
+    model: 'FR7000 Series',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO FR7000 Fixed RFID Reader | Industrial UHF RFID System',
+    seoMetaDescription: 'High-performance fixed RFID reader with Impinj E710 chip, 1300+ tags/sec read rate, and 12m range. Industrial-grade IP67 design for logistics applications.',
+    structuredDataEnabled: true
   }
   // Add more products as needed...
 ];
