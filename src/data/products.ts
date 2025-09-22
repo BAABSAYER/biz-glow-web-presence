@@ -761,6 +761,106 @@ export const products: Product[] = [
     seoMetaTitle: 'UROVO CT48 Enterprise Mobile Computer | Lightweight Warehouse Scanner',
     seoMetaDescription: 'Lightweight 252g enterprise mobile computer with 4" display, professional barcode scanning, and IP67 rating. Perfect for warehouse and logistics operations.',
     structuredDataEnabled: true
+  },
+  {
+    id: 'urovo-dt610',
+    slug: 'urovo-dt610',
+    name: 'UROVO DT610 RFID Mobile Computer',
+    shortDescription: 'Next-generation smartphone-style RFID mobile computer with integrated UHF RFID and advanced tracking capabilities',
+    heroImage: 'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-09-15/68c7b389bcdd1.png',
+    gallery: [
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-09-15/68c7b389bcdd1.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-09-12/68c3e90aa6e9b.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-09-12/68c3e908cefef.png'
+    ],
+    keyFeatures: [
+      'Qualcomm\'s world-first enterprise mobile processor with fully integrated RFID',
+      '6-inch FHD+ display - large, clear, and bright',
+      'Built-in short-range UHF RFID technology',
+      'Ultra-fast Wi-Fi 7 connectivity with 2x2 MU-MIMO',
+      'Millisecond-level 1D/2D barcode scanning',
+      'Lightweight and slim smartphone-style design',
+      'Flexible battery options with hot-swap technology',
+      'UWB precision tracking (works when device is on or off)',
+      'ARCore support for augmented reality applications',
+      'All-in-one solution for retail and logistics scenarios'
+    ],
+    specs: [
+      {
+        category: 'Display & Design',
+        specs: {
+          'Screen Size': '6.0 inches',
+          'Resolution': 'FHD+ (Full HD+)',
+          'Design': 'Smartphone-style, lightweight and slim',
+          'Portability': 'One-handed use, pocket-friendly'
+        }
+      },
+      {
+        category: 'RFID & Scanning',
+        specs: {
+          'RFID Technology': 'Built-in short-range UHF RFID',
+          'Processor Integration': 'Qualcomm enterprise mobile processor with integrated RFID',
+          'Barcode Support': '1D/2D/laminated/curved/color/damaged barcodes',
+          'Screen Code Support': 'On-screen barcode reading',
+          'Scanning Speed': 'Millisecond-level response'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'WiFi': 'Wi-Fi 7 with 2x2 MU-MIMO',
+          'Network Performance': 'Ultra-fast connectivity anytime, anywhere',
+          'Tracking': 'UWB precision tracking (on/off device)',
+          'Location Services': 'Advanced positioning capabilities'
+        }
+      },
+      {
+        category: 'Advanced Features',
+        specs: {
+          'Augmented Reality': 'ARCore support for flexible retail experience',
+          'Battery': 'Flexible options with hot-swap technology',
+          'Use Cases': 'All-in-one solution for retail and logistics scenarios',
+          'Innovation': 'Next-level innovation with smartphone design'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Battery', options: ['Standard Battery', 'Hot-Swap Battery'] },
+      { name: 'Configuration', options: ['Standard RFID', 'Enhanced Tracking'] }
+    ],
+    compatibility: [
+      'RFID tags and labels',
+      'UWB tracking systems',
+      'ARCore applications',
+      'Enterprise management platforms',
+      'Retail and logistics software'
+    ],
+    accessories: [
+      'Hot-Swap Battery Pack',
+      'Charging Cradle',
+      'Protective Case',
+      'Hand Strap',
+      'Screen Protector'
+    ],
+    datasheets: [
+      { name: 'RFID Specifications', url: '/datasheets/urovo-dt610-rfid-specs.pdf' },
+      { name: 'Technical Datasheet', url: '/datasheets/urovo-dt610-datasheet.pdf' }
+    ],
+    manuals: [
+      { name: 'User Manual', url: '/manuals/urovo-dt610-manual.pdf' },
+      { name: 'RFID Setup Guide', url: '/manuals/urovo-dt610-rfid-guide.pdf' }
+    ],
+    certifications: ['FCC', 'CE', 'RFID Compliance'],
+    useCases: ['logistics-warehousing'],
+    ctaType: 'quote',
+    sku: 'UROVO-DT610-001',
+    brand: 'UROVO',
+    model: 'DT610',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO DT610 RFID Mobile Computer | Next-Gen UHF RFID Scanner',
+    seoMetaDescription: 'Revolutionary RFID mobile computer with integrated UHF RFID, 6" FHD+ display, Wi-Fi 7, and UWB tracking. Perfect for advanced logistics and retail operations.',
+    structuredDataEnabled: true
   }
   // Add more products as needed...
 ];
