@@ -647,6 +647,120 @@ export const products: Product[] = [
     seoMetaTitle: 'UROVO DT66 Rugged Mobile Computer | 5G Logistics Scanner',
     seoMetaDescription: 'Ultra-rugged 6.5" mobile computer with 5G connectivity, professional barcode scanning, and IP68 rating. Perfect for logistics and warehousing operations.',
     structuredDataEnabled: true
+  },
+  {
+    id: 'urovo-ct48',
+    slug: 'urovo-ct48',
+    name: 'UROVO CT48 Enterprise Mobile Computer',
+    shortDescription: 'Lightweight enterprise mobile computer with professional scanning for efficient warehouse operations',
+    heroImage: 'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-21/6492a4f565ab4.png',
+    gallery: [
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-21/6492a4f565ab4.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-21/6492a4f9bee0e.png',
+      'http://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2023-06-27/649a9fd2702ab.png'
+    ],
+    keyFeatures: [
+      '4.0" touch screen display (480×800)',
+      'Lightweight design at only 252g for comfortable one-handed use',
+      'Octa-core 2.2GHz processor for fast performance',
+      'Professional scan engine with 25° scanning angle',
+      'Millisecond-level 1D/2D barcode recognition',
+      'IP67 rated with 1.5m drop resistance',
+      '5000mAh removable battery for full-shift operation',
+      '13MP autofocus rear camera',
+      'Large keypad design prevents accidental touches',
+      '100dB+ speaker for noisy environments'
+    ],
+    specs: [
+      {
+        category: 'Display & Interface',
+        specs: {
+          'Screen Size': '4.0 inches',
+          'Resolution': '480 × 800',
+          'Touch Technology': 'Capacitive touchscreen',
+          'Dimensions': '66mm width (ergonomic design)',
+          'Weight': '252g'
+        }
+      },
+      {
+        category: 'Performance',
+        specs: {
+          'Processor': 'Octa-core 2.2GHz',
+          'Memory': '4GB RAM',
+          'Storage': '64GB ROM',
+          'Storage Expansion': 'Micro SD up to 256GB',
+          'Operating System': 'Android',
+          'Battery': '5000mAh removable battery'
+        }
+      },
+      {
+        category: 'Scanning & Camera',
+        specs: {
+          'Scan Engine': 'Professional scan engine',
+          'Barcode Support': '1D/2D standard barcodes',
+          'Scanning Angle': '25° for easy operation',
+          'Response Speed': 'Millisecond-level recognition',
+          'Rear Camera': '13MP with fast autofocus'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'SIM Support': 'Nano-SIM × 1',
+          'Positioning': 'GPS, A-GPS, BEIDOU, GLONASS, Galileo',
+          'Audio': '1.5W speaker, microphone with noise cancellation',
+          'Volume': '100dB+ for noisy environments',
+          'Receiver': 'Optional'
+        }
+      },
+      {
+        category: 'Durability',
+        specs: {
+          'IP Rating': 'IP67 (dust-proof & water-proof)',
+          'Drop Spec': '1.5m drop resistance',
+          'Build Quality': 'Industrial-grade protection',
+          'Applications': 'Logistics, retail, manufacturing (indoor/outdoor)'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Storage', options: ['4GB/64GB Standard'] },
+      { name: 'SIM', options: ['Nano-SIM', 'Micro SD Slot'] },
+      { name: 'Receiver', options: ['Standard', 'Optional Receiver'] }
+    ],
+    compatibility: [
+      'Charging cradles and docks',
+      'Battery charging stations',
+      'Hand straps and carrying accessories',
+      'Protective covers and cases',
+      'Screen protectors'
+    ],
+    accessories: [
+      'Charging Cradle',
+      '4 Batteries Charge Cradle',
+      'Hand Strap',
+      'Protective Cover',
+      'Glass Screen Protector'
+    ],
+    datasheets: [
+      { name: 'Product Specifications', url: '/datasheets/urovo-ct48-specs.pdf' },
+      { name: 'Technical Datasheet', url: '/datasheets/urovo-ct48-datasheet.pdf' }
+    ],
+    manuals: [
+      { name: 'User Manual', url: '/manuals/urovo-ct48-manual.pdf' },
+      { name: 'Quick Start Guide', url: '/manuals/urovo-ct48-quickstart.pdf' }
+    ],
+    certifications: ['IP67', 'FCC', 'CE'],
+    useCases: ['logistics-warehousing'],
+    ctaType: 'quote',
+    sku: 'UROVO-CT48-001',
+    brand: 'UROVO',
+    model: 'CT48',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO CT48 Enterprise Mobile Computer | Lightweight Warehouse Scanner',
+    seoMetaDescription: 'Lightweight 252g enterprise mobile computer with 4" display, professional barcode scanning, and IP67 rating. Perfect for warehouse and logistics operations.',
+    structuredDataEnabled: true
   }
   // Add more products as needed...
 ];
