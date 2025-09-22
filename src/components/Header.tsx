@@ -44,6 +44,9 @@ const Header = () => {
             <a href="#services" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.services')}
             </a>
+            <a href="/products" className="text-primary hover:text-accent transition-colors font-medium">
+              {t('nav.products')}
+            </a>
             <a href="#use-cases" className="text-primary hover:text-accent transition-colors font-medium">
               Use Cases
             </a>
@@ -88,6 +91,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.services')}
+              </a>
+              <a 
+                href="/products" 
+                className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.products')}
               </a>
               <a 
                 href="#use-cases" 
