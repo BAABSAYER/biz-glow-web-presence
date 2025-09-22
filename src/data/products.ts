@@ -420,11 +420,14 @@ export const products: Product[] = [
       {
         category: 'Connectivity',
         specs: {
+          'Network': '4G, 3G, 2G',
+          'Wi-Fi': '2.4G/5G dual band, IEEE 802.11a/b/g/n/ac/d/h/i/k/r/v/w',
+          'Bluetooth': 'Bluetooth 5.0',
           'SIM Support': 'Nano-SIM × 1',
           'Positioning': 'GPS, A-GPS, BEIDOU, GLONASS, Galileo',
           'Audio': '1.5W speaker, microphone with noise cancellation',
           'Volume': '100dB+ for noisy environments',
-          'Receiver': 'Optional'
+          'NFC': 'Optional (ISO15693, ISO14443A/B, Mifare, Felica)'
         }
       },
       {
@@ -438,9 +441,9 @@ export const products: Product[] = [
       }
     ],
     variants: [
-      { name: 'Storage', options: ['4GB/64GB Standard'] },
-      { name: 'SIM', options: ['Nano-SIM', 'Micro SD Slot'] },
-      { name: 'Receiver', options: ['Standard', 'Optional Receiver'] }
+      { name: 'Memory', options: ['4GB RAM / 64GB ROM'] },
+      { name: 'Connectivity', options: ['4G/3G/2G', 'Wi-Fi Dual Band', 'Bluetooth 5.0'] },
+      { name: 'Optional Features', options: ['NFC Support', 'Micro SD up to 256GB'] }
     ],
     compatibility: [
       'Charging cradles and docks',
