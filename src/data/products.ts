@@ -475,8 +475,8 @@ export const products: Product[] = [
     slug: 'urovo-p8100-4g',
     name: 'UROVO P8100 4G',
     shortDescription: '8-inch rugged Android tablet with integrated barcode scanning, 4G connectivity, and enterprise-grade durability for demanding logistics operations',
-    heroImage: '/lovable-uploads/urovo-logo.png',
-    gallery: ['/lovable-uploads/urovo-logo.png'],
+    heroImage: '/src/assets/urovo-p8100-hero.jpg',
+    gallery: ['/src/assets/urovo-p8100-hero.jpg'],
     keyFeatures: [
       '8-inch HD display (1280×800) with capacitive touch',
       'Professional 1D/2D barcode scanner built-in',
@@ -576,8 +576,8 @@ export const products: Product[] = [
     slug: 'urovo-k200',
     name: 'UROVO K200 Industrial Wired Barcode Scanner',
     shortDescription: 'Ultra-rugged industrial wired barcode scanner with powerful DPM decoding capabilities and dual-color variable illumination for harsh manufacturing environments',
-    heroImage: '/lovable-uploads/urovo-logo.png',
-    gallery: ['/lovable-uploads/urovo-logo.png'],
+    heroImage: '/src/assets/urovo-k200-hero.jpg',
+    gallery: ['/src/assets/urovo-k200-hero.jpg'],
     keyFeatures: [
       'Professional scanning engine with 1280×1080 high-pixel sensor',
       'Superior DPM code reading on various marking methods',
