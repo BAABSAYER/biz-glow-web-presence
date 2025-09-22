@@ -90,24 +90,5 @@ export const useCases: UseCase[] = [
     featuredProducts: ['dashcam-dc1', 'mdvr-system-ms2', 'gps-tracker-gt3', 'vehicle-dock-vd4'],
     seoMetaTitle: 'Fleet Management Technology | Vehicle Tracking Systems | Talah Tech',
     seoMetaDescription: 'Dashcams, GPS trackers, and in-vehicle computing solutions for fleet management. Improve safety and efficiency with Talah Tech.'
-  },
-  {
-    id: 'smart-iot',
-    slug: 'smart-iot',
-    title: 'Smart IoT',
-    summary: 'Connected devices and sensors for intelligent automation',
-    longDescription: 'Build smart, connected environments with IoT gateways, sensors, edge computing devices, and connectivity solutions that enable intelligent automation and data-driven decision making.',
-    heroImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop',
-    industries: ['Smart Buildings', 'Manufacturing', 'Agriculture', 'Smart Cities'],
-    benefits: [
-      'Automated operations',
-      'Energy optimization',
-      'Predictive maintenance',
-      'Environmental monitoring',
-      'Remote control capabilities'
-    ],
-    featuredProducts: ['iot-gateway-ig1', 'smart-sensor-ss2', 'edge-device-ed3', 'connectivity-kit-ck4'],
-    seoMetaTitle: 'Smart IoT Solutions | IoT Gateways & Sensors | Talah Tech',
-    seoMetaDescription: 'IoT gateways, smart sensors, and edge devices for intelligent automation. Connect and optimize your operations with Talah Tech.'
   }
 ];

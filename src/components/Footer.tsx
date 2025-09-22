@@ -51,7 +51,6 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li className="text-gray-300 text-sm">POS Systems</li>
-              <li className="text-gray-300 text-sm">IoT Solutions</li>
               <li className="text-gray-300 text-sm">Enterprise Mobility</li>
               <li className="text-gray-300 text-sm">24/7 Support</li>
             </ul>

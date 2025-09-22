@@ -19,17 +19,6 @@ const Services = () => {
       ]
     },
     {
-      icon: Wifi,
-      title: t('services.iot.title'),
-      description: t('services.iot.description'),
-      features: [
-        t('services.iot.feature1'),
-        t('services.iot.feature2'),
-        t('services.iot.feature3'),
-        t('services.iot.feature4')
-      ]
-    },
-    {
       icon: Smartphone,
       title: t('services.mobility.title'),
       description: t('services.mobility.description'),

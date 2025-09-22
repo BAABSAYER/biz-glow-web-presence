@@ -40,17 +40,6 @@ const Products = () => {
         t('products.tablet.product2'),
         t('products.tablet.product3')
       ]
-    },
-    {
-      icon: Wifi,
-      title: t('products.iot_devices.title'),
-      description: t('products.iot_devices.description'),
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-      products: [
-        t('products.iot_devices.product1'),
-        t('products.iot_devices.product2'),
-        t('products.iot_devices.product3')
-      ]
     }
   ];
 
