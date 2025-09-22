@@ -30,7 +30,7 @@ export const useCases: UseCase[] = [
       'Integrated payment processing',
       'Staff productivity optimization'
     ],
-    featuredProducts: ['desktop-pos-x1', 'mobile-pos-scanner', 'all-in-one-terminal'],
+    featuredProducts: ['mobile-pos-scanner', 'all-in-one-terminal'],
     seoMetaTitle: 'Retail POS Solutions | Point of Sale Systems | Talah Tech',
     seoMetaDescription: 'Modern POS terminals, barcode scanners, and mobile payment solutions for retail and hospitality businesses. Streamline operations with Talah Tech.'
   },
@@ -49,7 +49,7 @@ export const useCases: UseCase[] = [
       'Real-time warehouse visibility',
       'Enhanced worker productivity'
     ],
-    featuredProducts: ['rugged-handheld-wh1', 'industrial-tablet-it2', 'warehouse-scanner-ws3'],
+    featuredProducts: ['industrial-tablet-it2', 'warehouse-scanner-ws3'],
     seoMetaTitle: 'Warehouse Management Solutions | Rugged Mobile Computers | Talah Tech',
     seoMetaDescription: 'Industrial tablets, rugged handhelds, and warehouse scanners for logistics operations. Built tough for demanding environments.'
   },
@@ -68,7 +68,7 @@ export const useCases: UseCase[] = [
       'Regulatory compliance',
       'Infection control support'
     ],
-    featuredProducts: ['medical-tablet-mt1', 'antimicrobial-cart-ac2', 'vitals-peripheral-vp3'],
+    featuredProducts: ['antimicrobial-cart-ac2', 'vitals-peripheral-vp3'],
     seoMetaTitle: 'Healthcare Technology Solutions | Medical Tablets | Talah Tech',
     seoMetaDescription: 'Medical-grade tablets, antimicrobial accessories, and healthcare devices for hospitals and clinics. Compliant with healthcare standards.'
   },
