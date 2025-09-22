@@ -123,15 +123,7 @@ export const products: Product[] = [
       'Protective cases and holsters',
       'Magic Box accessory'
     ],
-    accessories: [
-      'Charging Cradle',
-      'Desktop Stand', 
-      'Holster',
-      'Silicone Rubber Protective Case',
-      'TPU Protective Case',
-      'Magic Box',
-      'Fingerprint Module (Optional)'
-    ],
+    accessories: [],
     datasheets: [
       { name: 'Product Specifications', url: '/datasheets/urovo-i9100-specs.pdf' },
       { name: 'Payment Certifications', url: '/datasheets/urovo-i9100-certifications.pdf' }
@@ -239,16 +231,7 @@ export const products: Product[] = [
       'Protective holsters',
       'Multi-function HUBs'
     ],
-    accessories: [
-      'Charging Cradle',
-      'Dual-slot Battery Charger',
-      'POS Stand',
-      'Hand Strap',
-      'Optical Fingerprint Scanner (FAP20)',
-      'Multi-Function HUB',
-      'Holster',
-      'Low-temperature Battery'
-    ],
+    accessories: [],
     datasheets: [
       { name: 'Product Specifications', url: '/datasheets/urovo-i9000s-specs.pdf' },
       { name: 'Payment Certifications', url: '/datasheets/urovo-i9000s-certifications.pdf' }
@@ -358,15 +341,7 @@ export const products: Product[] = [
       'Vehicle mounts and docks',
       'Holsters and carrying cases'
     ],
-    accessories: [
-      'Trigger Handle',
-      'Rugged Boot',
-      'USB/Ethernet Charging Cradle',
-      'Screen Protector',
-      '4-Slot Battery Charging Cradle',
-      '5-Slot Charging Cradle',
-      'Hand Strap'
-    ],
+    accessories: [],
     datasheets: [
       { name: 'Product Specifications', url: '/datasheets/urovo-dt66-specs.pdf' },
       { name: 'Technical Datasheet', url: '/datasheets/urovo-dt66-datasheet.pdf' }
@@ -474,13 +449,7 @@ export const products: Product[] = [
       'Protective covers and cases',
       'Screen protectors'
     ],
-    accessories: [
-      'Charging Cradle',
-      '4 Batteries Charge Cradle',
-      'Hand Strap',
-      'Protective Cover',
-      'Glass Screen Protector'
-    ],
+    accessories: [],
     datasheets: [
       { name: 'Product Specifications', url: '/datasheets/urovo-ct48-specs.pdf' },
       { name: 'Technical Datasheet', url: '/datasheets/urovo-ct48-datasheet.pdf' }
@@ -581,13 +550,7 @@ export const products: Product[] = [
       'Hand straps and lanyards',
       'Screen protectors'
     ],
-    accessories: [
-      'Vehicle Mount Kit',
-      'Desktop Charging Cradle',
-      'Protective Case',
-      'Screen Protector',
-      'Hand Strap'
-    ],
+    accessories: [],
     datasheets: [
       { name: 'Product Specifications', url: '/datasheets/urovo-p8100-specs.pdf' },
       { name: 'Technical Datasheet', url: '/datasheets/urovo-p8100-datasheet.pdf' }
@@ -686,12 +649,7 @@ export const products: Product[] = [
       'Quality control applications',
       'Production line tracking'
     ],
-    accessories: [
-      'Replacement Cables',
-      'Desktop Stand',
-      'Holster',
-      'Protective Case'
-    ],
+    accessories: [],
     datasheets: [
       { name: 'Product Specifications', url: '/datasheets/urovo-k200-specs.pdf' },
       { name: 'Technical Datasheet', url: '/datasheets/urovo-k200-datasheet.pdf' }
@@ -800,16 +758,7 @@ export const products: Product[] = [
       'Healthcare software applications',
       'Point-of-care systems'
     ],
-    accessories: [
-      'Bio-hazard Waste Container',
-      'Side Storage Containers',
-      'Trash Bins',
-      'Additional Drawer Units',
-      'Keyboard and Mouse Set',
-      'Medical Equipment Mounts',
-      'Power Strip Module',
-      'Document Holders'
-    ],
+    accessories: [],
     datasheets: [
       { name: 'Medical Station Specifications', url: '/datasheets/urovo-t3-nursing-specs.pdf' },
       { name: 'Hygiene and Safety Certifications', url: '/datasheets/urovo-t3-medical-certifications.pdf' }
