@@ -978,6 +978,113 @@ export const products: Product[] = [
     structuredDataEnabled: true
   },
   {
+    id: 'urovo-p8100-4g',
+    slug: 'urovo-p8100-4g',
+    name: 'UROVO P8100 4G',
+    shortDescription: '8-inch rugged Android tablet with integrated barcode scanning, 4G connectivity, and enterprise-grade durability for demanding logistics operations',
+    heroImage: '/lovable-uploads/urovo-logo.png',
+    gallery: ['/lovable-uploads/urovo-logo.png'],
+    keyFeatures: [
+      '8-inch HD display (1280×800) with capacitive touch',
+      'Professional 1D/2D barcode scanner built-in',
+      'Dual-SIM 4G connectivity with global band support',
+      'IP67 protection rating with 1.2m drop resistance',
+      '8400mAh battery with Quick Charge support',
+      'Multi-positioning system (GPS, GLONASS, Galileo)',
+      'Lightweight 600g design for all-day use',
+      'Android OS with enterprise management'
+    ],
+    specs: [
+      {
+        category: 'Performance',
+        specs: {
+          'Processor': 'Qualcomm Octa-core 2.45GHz',
+          'Operating System': 'Android',
+          'Memory': '4GB RAM / 64GB ROM (8GB/128GB optional)',
+          'Display': '8-inch IPS LCD, 1280×800 resolution',
+          'Touch Screen': 'Capacitive multi-touch, glove/wet finger support'
+        }
+      },
+      {
+        category: 'Data Capture',
+        specs: {
+          'Barcode Scanning': 'Professional 1D/2D barcode engine',
+          'Camera': 'Front 5MP, Rear 13MP with LED flash',
+          'Supported Codes': 'International standard 1D/2D barcodes',
+          'Special Features': 'On-screen and colored barcode scanning'
+        }
+      },
+      {
+        category: 'Connectivity',
+        specs: {
+          'Cellular': 'Dual-SIM 4G/3G/2G, Dual-Standby',
+          'WiFi': '2.4G/5G IEEE 802.11a/b/g/n/ac/ax ready',
+          'GPS': 'GPS, A-GPS, BEIDOU, GLONASS, Galileo',
+          'Ports': '3.5mm audio jack, USB-C charging',
+          'Storage': 'Micro SD/TF slot, dual Nano-SIM'
+        }
+      },
+      {
+        category: 'Durability',
+        specs: {
+          'Protection Rating': 'IP67 dust and water protection',
+          'Drop Resistance': '1.2m drop test certified',
+          'Operating Temperature': '-20°C to +60°C',
+          'Storage Temperature': '-40°C to +70°C',
+          'Humidity': '5%RH to 95%RH (non-condensing)'
+        }
+      },
+      {
+        category: 'Physical',
+        specs: {
+          'Dimensions': '253.8 × 146 × 16.5mm',
+          'Weight': 'Approximately 600g',
+          'Battery': '3.85V 8400mAh Li-ion with QC charging',
+          'Audio': 'Dual microphone, dual speaker (1.2W)',
+          'Buttons': 'Power, Volume +/-, Scan trigger, P1-P8 optional'
+        }
+      }
+    ],
+    variants: [
+      { name: 'Memory', options: ['4GB/64GB', '8GB/128GB'] },
+      { name: 'Buttons', options: ['Standard', 'P1-P8 Programmable Keys'] },
+      { name: 'Security', options: ['Standard', 'PSAM Slot Option'] }
+    ],
+    compatibility: [
+      'Vehicle docking stations',
+      'Desktop charging cradles',
+      'Protective cases and covers',
+      'Hand straps and lanyards',
+      'Screen protectors'
+    ],
+    accessories: [
+      'Vehicle Mount Kit',
+      'Desktop Charging Cradle',
+      'Protective Case',
+      'Screen Protector',
+      'Hand Strap'
+    ],
+    datasheets: [
+      { name: 'Product Specifications', url: '/datasheets/urovo-p8100-specs.pdf' },
+      { name: 'Technical Datasheet', url: '/datasheets/urovo-p8100-datasheet.pdf' }
+    ],
+    manuals: [
+      { name: 'User Manual', url: '/manuals/urovo-p8100-manual.pdf' },
+      { name: 'Quick Start Guide', url: '/manuals/urovo-p8100-quickstart.pdf' }
+    ],
+    certifications: ['IP67', 'FCC', 'CE', 'GMS'],
+    useCases: ['logistics-warehousing'],
+    ctaType: 'quote',
+    sku: 'UROVO-P8100-001',
+    brand: 'UROVO',
+    model: 'P8100 4G',
+    availability: 'in-stock',
+    price: 'Contact for pricing',
+    seoMetaTitle: 'UROVO P8100 4G Rugged Tablet | 8-inch Logistics Android Tablet',
+    seoMetaDescription: '8-inch rugged Android tablet with professional barcode scanning, 4G connectivity, and IP67 protection. Perfect for logistics, warehousing, and field operations.',
+    structuredDataEnabled: true
+  },
+  {
     id: 'urovo-t3-nursing-station',
     slug: 'urovo-t3-nursing-station',
     name: 'UROVO T3 Series Medical Nursing Mobile Station',
