@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -44,9 +45,9 @@ const Header = () => {
             <a href="#services" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.services')}
             </a>
-            <a href="/products" className="text-primary hover:text-accent transition-colors font-medium">
+            <Link to="/products" className="text-primary hover:text-accent transition-colors font-medium">
               {t('nav.products')}
-            </a>
+            </Link>
             <a href="#use-cases" className="text-primary hover:text-accent transition-colors font-medium">
               Use Cases
             </a>
@@ -92,13 +93,13 @@ const Header = () => {
               >
                 {t('nav.services')}
               </a>
-              <a 
-                href="/products" 
+              <Link 
+                to="/products" 
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.products')}
-              </a>
+              </Link>
               <a 
                 href="#use-cases" 
                 className="text-talah-primary hover:text-talah-accent transition-colors font-medium"
